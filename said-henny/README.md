@@ -9,20 +9,15 @@ https://yaswarau.id/said-henny/
 Buku Tamu
 https://docs.google.com/spreadsheets/d/1Y432BimDJSw1s3bJXHW0C5VOvvcqI82JwRrAakhYGmo/edit?usp=sharing
 
+Trello URL
+https://trello.com/c/HKr5zpk7/5-02-said-henny
+
 ## KOREKSI 01
 10/02/2022
 
 by Kaka Alfa Tamaela
 
 
-⌛ font untuk nama orang tua diganti  font wedding <br>
-⌛ tulisan akad nikah dan resepsi di besarkan sedikit <br>
-⌛ Warna putih background ganti warna nude <br>
-✅ foto muka pengantin wanita di ganti, ambil dari foto yang sama saja denga pria <br>
-⌛ masukan lagu <br>
-⌛ untuk konfirmasi kehadiran di buat option jadi tinggal di klik <br>
-⌛ galeri foto kalau bisa biar tidak kosong banyak <br>
+## Projects TODOs
 
-## Status
-✅ Done
-⌛ On Progress
+https://github.com/orgs/nokensoftprojects2023/projects/1
