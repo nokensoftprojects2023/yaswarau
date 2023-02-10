@@ -381,7 +381,12 @@
           timer: 1000
       });
       }else{
-          alert('Harap diisi dengan benar !')
+          Swal.fire({         //displays a pop up with sweetalert
+          icon: 'error',
+          text: 'Semua belum terisi !!',
+          showConfirmButton: false,
+          timer: 1000
+      });
       }
   }
 </script>
