@@ -205,3 +205,16 @@ html {
 	font-size: 35%;
 }
 }
+
+.resepsi{
+	margin-top: 100px;
+	/* margin-bottom: 100px; */
+}
+
+.wanita{
+	margin-bottom: 10px !important;
+}
+.main-content{
+	margin-top: 0px;
+	padding-top: 0px;
+}
