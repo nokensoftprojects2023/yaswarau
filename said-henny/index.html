@@ -244,7 +244,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <div class="styled-select">
-                      <select id="form_category"  name="kehadiran" class="form-control" required>
+                      <select   id="kehadiran" name="kehadiran" class="form-control" required>
                         <option value="Semua Kegiatan">Semua Kegiatan</option>
                         <option value="Akad">Akad</option>
                         <option value="Resepsi">Resepsi</option>
@@ -260,7 +260,7 @@
                 </div>
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <textarea id="form_message" name="ucapan" class="form-control required" rows="5" placeholder="Ucapan & Doa"></textarea>
+                    <textarea id="ucapan" name="ucapan" class="form-control required" rows="5" placeholder="Ucapan & Doa"></textarea>
                   </div>
                 </div>
                 <div class="col-sm-12">
@@ -346,13 +346,16 @@
 
 
 <script>
-   var script_url = "https://script.google.com/macros/s/AKfycbxoRbO5ZsffEFgc8l15vYEDXvJ9OP5ddO8fnIFbMGZNtNsQ3RHMA9kRPLGv5b8vrqAH/exec";
+   var script_url = "https://script.google.com/macros/s/AKfycbyCBscd198aMVFdGAkTW9obPgmsV4q9IAtwoE68xEGCvmC_bgGgBTN3lfYXQ43wPqJ4DA/exec";
   
   function insert_value()
   {
       let nama = $("#nama").val();
       let ucapan = $("#ucapan").val();
       let kehadiran = $("#kehadiran").val();
+      console.info(nama)
+          console.info(ucapan)
+          console.info(kehadiran)
       if(nama && ucapan && kehadiran )
       {
           console.info(nama)
