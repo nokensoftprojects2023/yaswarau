@@ -371,17 +371,9 @@
        let kehadiran = $("#kehadiran").val();
       if(nama && ucapan && kehadiran )
       {
-          console.info(nama)
-          console.info(ucapan)
-          console.info(kehadiran)
-
           let url = script_url+"?callback=ctrlq&nama="+nama+"&ucapan="+ucapan+"&kehadiran="+kehadiran+"&action=insert";
-          $("input[type='text']").attr("disabled","disabled");
-          $("input[type='number']").attr("disabled","disabled");
-          $("input[type='button']").attr("disabled","disabled");
-          $("textarea").attr("disabled","disabled");
-          $("select").attr("disabled","disabled");
-          
+          $("input[type='text']").val("");
+          $("textarea").val("");
           var request = jQuery.ajax({
           crossDomain: true,
           url: url ,
