@@ -240,12 +240,11 @@
           <div class="row">
           <div class="col-md-6">
             <h2 class="mt-0 mb-30 text-white">Apakah Anda hadir?</h2>
-            <form id="rsvp_form" name="rsvp_form" class="form-transparent form-text-white" method="post" action="includes/rsvp.php">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="form-group">
                     <div class="styled-select">
-                      <select id="form_category" name="form_category" class="form-control" required>
+                      <select id="form_category"  name="kehadiran" class="form-control" required>
                         <option value="Semua Kegiatan">Semua Kegiatan</option>
                         <option value="Akad">Akad</option>
                         <option value="Resepsi">Resepsi</option>
@@ -261,17 +260,16 @@
                 </div>
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <textarea id="form_message" name="form_message" class="form-control required" rows="5" placeholder="Ucapan & Doa"></textarea>
+                    <textarea id="form_message" name="ucapan" class="form-control required" rows="5" placeholder="Ucapan & Doa"></textarea>
                   </div>
                 </div>
                 <div class="col-sm-12">
                   <div class="form-group mb-0">
                     <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                    <button type="submit" class="btn btn-colored btn-theme-colored btn-lg btn-submit"  data-loading-text="Please wait...">Kirim Pesan </button>
+                    <button type="submit" class="btn btn-colored btn-theme-colored btn-lg btn-submit" onclick="insert_value()"   data-loading-text="Please wait...">Kirim Pesan </button>
                   </div>
                 </div>
               </div>
-            </form>
             <!-- rsvp Form Validation-->
             <script type="text/javascript">
               $("#rsvp_form").validate({
@@ -348,7 +346,7 @@
 
 
 <script>
-   var script_url = "https://script.google.com/macros/s/AKfycby1Q2oATlNfwEacioOp2_v6LZJS7cH6qSTeihqfMlqjT-yUhpllvmsEv7NJojftc3yf8Q/exec";
+   var script_url = "https://script.google.com/macros/s/AKfycbxoRbO5ZsffEFgc8l15vYEDXvJ9OP5ddO8fnIFbMGZNtNsQ3RHMA9kRPLGv5b8vrqAH/exec";
   
   function insert_value()
   {
