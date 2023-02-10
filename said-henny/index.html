@@ -4,19 +4,20 @@
 
 <!-- Meta Tags -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<meta name="description" content="Said - Henny" />
-<meta name="keywords" content="Yaswarau - Undangan Digital Papua" />
-<meta name="author" content="Yaswarau" />
-<meta property="og:image" content="./images/bg/bg2.jpg" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="Yaswarau" />
+<meta property="og:title" content="Yaswarau - Said & Henny" />
+<meta property="og:description" content="Yaswarau Udangan Digital Papua" />
+<meta property="og:url" content="https://yaswarau.id/said-henny/" />
+<meta property="og:site_name" content="Yaswarau" />
+<meta property="og:image" content="https://yaswarau.id/said-henny/images/bg/bg2.jpg" />
 
 <!-- Page Title -->
 <title>Said & Henny - Weeding Invitation</title>
 
 <!-- Favicon and Touch Icons -->
 <link href="./images/yaswarau.jpg" rel="shortcut icon" type="image/png">
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <!-- Stylesheet -->
 <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -266,7 +267,7 @@
                 <div class="col-sm-12">
                   <div class="form-group mb-0">
                     <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                    <button type="submit" class="btn btn-colored btn-theme-colored btn-lg btn-submit" data-loading-text="Please wait...">Kirim Pesan </button>
+                    <button type="submit" class="btn btn-colored btn-theme-colored btn-lg btn-submit"  data-loading-text="Please wait...">Kirim Pesan </button>
                   </div>
                 </div>
               </div>
@@ -346,9 +347,46 @@
   <script>autoplay();</script>  -->
 
 
-
 <script>
- 
+   var script_url = "https://script.google.com/macros/s/AKfycby1Q2oATlNfwEacioOp2_v6LZJS7cH6qSTeihqfMlqjT-yUhpllvmsEv7NJojftc3yf8Q/exec";
+  
+  function insert_value()
+  {
+      let nama = $("#nama").val();
+      let ucapan = $("#ucapan").val();
+      let kehadiran = $("#kehadiran").val();
+      if(nama && ucapan && kehadiran )
+      {
+          console.info(nama)
+          console.info(ucapan)
+          console.info(kehadiran)
+
+          let url = script_url+"?callback=ctrlq&nama="+nama+"&ucapan="+ucapan+"&kehadiran="+kehadiran+"&action=insert";
+          $("input[type='text']").attr("disabled","disabled");
+          $("input[type='number']").attr("disabled","disabled");
+          $("input[type='button']").attr("disabled","disabled");
+          $("textarea").attr("disabled","disabled");
+          $("select").attr("disabled","disabled");
+          
+          var request = jQuery.ajax({
+          crossDomain: true,
+          url: url ,
+          method: "GET",
+          dataType: "jsonp"
+          });
+
+
+          Swal.fire({         //displays a pop up with sweetalert
+          icon: 'success',
+          text: 'Pesan sudah tersimpan !',
+          showConfirmButton: false,
+          timer: 1000
+      });
+      }else{
+          alert('Harap diisi dengan benar !')
+      }
+  }
+</script>
 </script>
 </body>
 </html>
