@@ -175,18 +175,47 @@
                             </div>
                         </div>
 
-                        <div class="row p-0">
-                            <div class="col-md-8 col-md-offset-2 text-center">
-                              <div class="soon" id="countdown-timer-soon-glow"
-                                data-layout="group overlap"
-                                data-face="slot doctor glow"
-                                data-padding="false"
-                                data-scale-max="2"
-                                data-due="2023-02-15"
-                                data-visual="ring color-light width-thin glow-progress length-70 gap-0 offset-65">
-                              </div>
+                        <div id="countdown" class=" text-center" style="padding-top:40px; margin: auto; ">
+                            <div class="row text-center" style="display: flex; align-items: center; justify-content: center;">
+                                <div class="col-sm-2">
+                                    <div class="waktu">
+                                        <p class="text-center text-white">
+                                            <span class="numbers days waktu-mundur" style="font-size: 13px;">
+                                                00
+                                            </span>
+                                            <span style="font-size: 13px;" class="waktu-mundur">
+                                                Hari
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 ">
+                                    <div class="waktu">
+                                        <p class="text-center text-white">
+                                            <span class="numbers hours waktu-mundur" style="font-size: 13px;">00</span>
+                                            <span  class="waktu-mundur" style="font-size: 13px;">Jam</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="waktu">
+                                        <p class="text-center text-white">
+                                            <span class="numbers minutes waktu-mundur" style="font-size: 13px;">00</span>
+                                            <span class="waktu-mundur" style="font-size: 13px;">Menit</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="waktu">
+                                        <p class="text-center text-white">
+                                            <span class="numbers seconds waktu-mundur" style="font-size: 13px;">00</span>
+                                            <span class="waktu-mundur" style="font-size: 13px;">Detik</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
+
 
                     </div>
                 </div>
@@ -646,7 +675,7 @@
             // let header = document.getElementById("header");
             let main = document.getElementById("main-content");
             var opening = document.getElementById("opening");
-            var time = document.getElementById("countdown-timer-soon-glow");
+            // var time = document.getElementById("countdown-timer-soon-glow");
             let btn_pause = document.getElementById("pause-btn");
             let btn_play = document.getElementById("play-btn");
             let sound_controls = document.getElementById("sound-controls");
@@ -655,7 +684,7 @@
             opening.classList.add("d-none");
             // header.classList.remove("d-none");
             main.classList.remove("d-none");
-            time.classList.remove("d-none");
+            // time.classList.remove("d-none");
             btn_pause.classList.add("d-none");
             btn_play.classList.remove("d-none");
             sound_controls.classList.remove("d-none");
@@ -713,6 +742,84 @@
                 });
             }
         }
+
+        $(document).ready(function(){
+	//
+  (function(e){
+		e.fn.countdown = function (t, n){
+			function i(){
+				eventDate = Date.parse(r.date) / 1e3;
+				currentDate = Math.floor(e.now() / 1e3);
+				//
+				if(eventDate <= currentDate){
+					n.call(this);
+					clearInterval(interval)
+				}
+				//
+				seconds = eventDate - currentDate;
+				days = Math.floor(seconds / 86400);
+				seconds -= days * 60 * 60 * 24;
+				hours = Math.floor(seconds / 3600);
+				seconds -= hours * 60 * 60;
+				minutes = Math.floor(seconds / 60);
+				seconds -= minutes * 60;
+				//
+				days == 1 ? thisEl.find(".timeRefDays").text("Days") : thisEl.find(".timeRefDays").text("Days");
+				hours == 1 ? thisEl.find(".timeRefHours").text("Hours") : thisEl.find(".timeRefHours").text("Hours");
+				minutes == 1 ? thisEl.find(".timeRefMinutes").text("Minutes") : thisEl.find(".timeRefMinutes").text("Minutes");
+				seconds == 1 ? thisEl.find(".timeRefSeconds").text("Seconds") : thisEl.find(".timeRefSeconds").text("Seconds");
+				//
+				if(r["format"] == "on"){
+					days = String(days).length >= 2 ? days : "0" + days;
+					hours = String(hours).length >= 2 ? hours : "0" + hours;
+					minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+					seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+				}
+				//
+				if(!isNaN(eventDate)){
+					thisEl.find(".days").text(days);
+					thisEl.find(".hours").text(hours);
+					thisEl.find(".minutes").text(minutes);
+					thisEl.find(".seconds").text(seconds)
+				}
+        else{
+          errorMessage = "Invalid date. Example: 27 March 2025 17:00:00";
+					alert(errorMessage);
+					console.log(errorMessage);
+					clearInterval(interval)
+				}
+			}
+			//
+			var thisEl = e(this);
+			var r = {
+				date: null,
+				format: null
+			};
+			//
+			t && e.extend(r, t);
+			i();
+			interval = setInterval(i, 1e3)
+		}
+	})(jQuery);
+	//
+	$(document).ready(function(){
+		function e(){
+			var e = new Date;
+			e.setDate(e.getDate() + 60);
+			dd = e.getDate();
+			mm = e.getMonth() + 1;
+			y = e.getFullYear();
+			futureFormattedDate = mm + "/" + dd + "/" + y;
+			return futureFormattedDate
+		}
+		//2023-02-15
+		$("#countdown").countdown({
+			date: "15 February 2023 23:59:59", // change date/time here - do not change the format!
+			format: "on"
+		});
+		
+	});
+});
     </script>
 </body>
 
