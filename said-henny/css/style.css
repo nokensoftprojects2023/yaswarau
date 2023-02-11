@@ -1,0 +1,159 @@
+/* yaswarau style */
+
+/* import google font */
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+.btn-colored {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.text-theme-colored {
+    color: #e74c3c;
+}
+
+.btn-colored:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+.yaswarau-request-font,
+section .row h1,
+section .row h2 {
+    font-family: "Courgette";
+    color: #e74c3c;
+}
+
+section .row h2 {
+    font-size: 70px;
+}
+
+#home h1, #opening h1 {
+    font-size: 80px;
+}
+
+#home h3 {
+    font-size: 60px;
+}
+
+section .row h4 {
+    font-family: "calibri";
+}
+
+/* origin style */
+
+.menu-bar {
+    width: 100%;
+    background: #fff;
+    height: 60px;
+}
+
+.menu-bar a {
+    margin-right: 80px;
+    margin-top: 50px;
+}
+
+/* intro */
+.bg-intro {
+    background-color: #e74c3c;
+}
+
+.text-intro-color {
+    color: #e74c3c;
+}
+
+.img-couple-intro {
+    border-width: 15px;
+    border-color: #e74c3c;
+    border-style: solid;
+    padding: 15px;
+}
+
+.opening .image {
+    border-radius: 50px;
+    width: 600px;
+}
+
+.opening .info-opening p {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bolder;
+}
+
+.opening h2 {
+    color: white;
+    font-weight: bolder;
+}
+
+.opening h1 {
+    color: white;
+    font-weight: bolder;
+}
+
+.opening i {
+    color: white;
+    font-weight: bolder;
+}
+
+.opening .info-opening .name {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    color: black;
+}
+
+.d-none {
+    display: none;
+}
+
+.btn-intro{
+    font-size: 50px;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.rounded-circle {
+    border-radius: 100%;
+}
+
+
+/* music controls */
+
+
+.play-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 2px;
+    top: 5px;
+   
+}
+
+.pause-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 2px;
+    top: 5px;
+}

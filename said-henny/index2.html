@@ -139,12 +139,14 @@
 
 
   <!-- Button play & pause -->
-  <a href="#pause" onclick="pauseButton()" class="pause-btn d-none-button" id="pause-btn">
-    <img src="images/pause.png" width="30" alt="" />
-</a>
-    <a href="#play" onclick="playButton()" class="play-btn d-none" id="play-btn">
-      <img src="images/play-button.png" width="30" alt="" />
-  </a>
+  <div id="sound-controls" class="d-none">
+    <a href="#pause" onclick="pauseButton()" class="pause-btn d-none-button" id="pause-btn" style="margin: 30px;width:50px;"  >
+        <img src="images/pause.png"/>
+    </a>
+        <a href="#play" onclick="playButton()" class="play-btn d-none" id="play-btn" style="margin: 30px;width:50px;">
+          <img src="images/play-button.png"/>
+      </a>
+  </div>
  
 
   <div class="body-overlay"></div>
@@ -503,20 +505,26 @@
  var x = document.getElementById("myAudio"); 
 
 function playAudio() { 
+
   let header = document.getElementById("header");
   let main = document.getElementById("main-content");
   var opening = document.getElementById("opening");
   var time = document.getElementById("countdown-timer-soon-glow");
   let btn_pause = document.getElementById("pause-btn");
   let btn_play = document.getElementById("play-btn");
+  let sound_controls = document.getElementById("sound-controls");
+
   opening.classList.add("d-none");
   header.classList.remove("d-none");
   main.classList.remove("d-none");
   time.classList.remove("d-none");
   btn_pause.classList.add("d-none");
   btn_play.classList.remove("d-none");
+  sound_controls.classList.remove("d-none");
+  
   x.play(); 
 } 
+
 function playButton() { 
   let btn_pause = document.getElementById("pause-btn");
   let btn_play = document.getElementById("play-btn");
