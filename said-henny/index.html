@@ -51,8 +51,17 @@
 
 </head>
 <body class="has-side-panel side-panel-right fullwidth-page side-push-panel boxed-layout pt-0 p-60" data-bg-img="../images/pattern/yaswarau-pattern-03.jpg">
-<div class="body-overlay"></div>
-<audio id="audio" src="audio.mp3" ></audio>
+<!-- Button play & pause -->
+<div id="sound-controls" class="d-none">
+  <a href="#pause" onclick="pauseButton()" class="pause-btn d-none-button" id="pause-btn" style="margin: 30px;width:50px;"  >
+      <img src="images/pause.png"/>
+  </a>
+      <a href="#play" onclick="playButton()" class="play-btn d-none" id="play-btn" style="margin: 30px;width:50px;">
+        <img src="images/play-button.png"/>
+    </a>
+</div>
+
+  <div class="body-overlay"></div>
 <div id="wrapper" class="clearfix">
   <!-- preloader -->
   <div id="preloader">
@@ -74,8 +83,56 @@
     </div>
   </header>
 
+    <!-- Section: home -->
+    <section id="opening" class="opening text-intro-color divider parallax " data-stellar-background-ratio="0.5">
+        
+  
+      <div class="display-table">
+        <div class="display-table-cell">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 text-center pt-60 wow fadeInUp animation-delay2">
+                <h1 class="font-Playfair">Said & Henny</h1>
+                <h3 class="text-intro-color">are getting married</h3>
+                <img src="../images/wedding-frame-after.png" alt="wedding-frame-after">
+              </div>
+            </div>
+
+          
+          <div class="section-content">
+              <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 wow fadeInRight animation-delay2">
+                      <div class="best-people">
+                          <div class="">
+                              
+                              <img class="rounded-circle mb-5 img-couple-intro" src="./images/couple/couple.jpg" alt="">
+
+                              <p class="yaswarau-request-font h2">Kepada Yth. Bapak/Ibu/Saudara</p>
+                              <p class="yaswarau-request-font h4">Kami dengan hormat mengundang Anda untuk dapat hadir dalam acara pernikahan kami.</p>
+                              <img src="../images/section-title-after.png" alt="">
+                              <div class="pt-40">
+                                  <a href="#home" onclick="playAudio()" type="button" class="btn  btn-intro btn-theme-colored yaswarau-request-font text-white" id="btn-buka"> <i class="fa fa-envelope"></i> Buka Undangan </a>
+                              </div>
+                          </div>
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
   <!-- Start main-content -->
-  <div class="main-content">
+  <audio id="myAudio">
+      <source src="music/audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+  <!-- Start main-content -->
+  <div class="main-content d-none" id="main-content">
     <!-- Section: home -->
     <section id="home" class="divider parallax layer-overlay overlay-dark-3" data-stellar-background-ratio="0.5">
       <div class="maximage-slider">
@@ -489,7 +546,7 @@
 
   
   <!-- Footer -->
-  <footer id="footer" class="footer pb-0 bg-deep">
+  <footer id="footer" class="footer pb-0 bg-deep d-none">
     <div class="container-fluid bg-black-222 p-20">
       <div class="row text-center">
         <dvi class="col-md-12">
@@ -504,22 +561,51 @@
 <!-- Footer Scripts -->
 <!-- JS | Custom script for all pages -->
 <script src="../js/custom.js"></script>
-<!-- <script type="text/javascript">
-  function autoplay(){
-      var r =confirm("Would You Like To AutoPlay Music?");
-      if (r == true) {
-          var audio = document.getElementById("audio");
-         audio.play();
-      }
-    }
 
-
-    
-  </script>
-  <script>autoplay();</script>  -->
 
 
 <script>
+ // Audio
+ var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+
+  // let header = document.getElementById("header");
+  let main = document.getElementById("main-content");
+  var opening = document.getElementById("opening");
+  var time = document.getElementById("countdown-timer-soon-glow");
+  let btn_pause = document.getElementById("pause-btn");
+  let btn_play = document.getElementById("play-btn");
+  let sound_controls = document.getElementById("sound-controls");
+
+  opening.classList.add("d-none");
+  // header.classList.remove("d-none");
+  main.classList.remove("d-none");
+  time.classList.remove("d-none");
+  btn_pause.classList.add("d-none");
+  btn_play.classList.remove("d-none");
+  sound_controls.classList.remove("d-none");
+  
+  x.play(); 
+} 
+
+function playButton() { 
+  let btn_pause = document.getElementById("pause-btn");
+  let btn_play = document.getElementById("play-btn");
+  btn_pause.classList.add("d-none");
+  btn_play.classList.remove("d-none");
+  x.play(); 
+}  
+
+function pauseButton() { 
+  let btn_pause = document.getElementById("pause-btn");
+  let btn_play = document.getElementById("play-btn");
+  btn_pause.classList.remove("d-none");
+  btn_play.classList.add("d-none");
+  x.pause(); 
+}             
+       
+
    var script_url = "https://script.google.com/macros/s/AKfycbyzmOsgJ-HEj1dVXolp7sKOZbeNyj-4t8VC-dQGxrb8GmLrDksbHCnz_hN2JvIQ05A3/exec";
   function insert_value()
   {

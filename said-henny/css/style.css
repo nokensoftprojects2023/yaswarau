@@ -105,6 +105,7 @@ section .row h4 {
 
 .d-none {
     display: none;
+    z-index: 99999;
 }
 
 .btn-intro{
