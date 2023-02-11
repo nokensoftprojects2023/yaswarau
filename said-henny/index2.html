@@ -86,14 +86,68 @@
   }
    .d-none{
     display: none;
+    z-index: 99999;
    }
+   /* .d-none-button{
+    display: block;
+    z-index: 99999;
+   } */
+   
+
+  .play-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 2px;
+    top: 5px;
+   
+}
+
+.pause-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 2px;
+    top: 5px;
+}
   
 </style>
 
 </head>
 
 <body class="has-side-panel side-panel-right fullwidth-page side-push-panel boxed-layout  " data-bg-img="../images/pattern/p17.png">
-<div class="body-overlay"></div>
+
+
+  <!-- Button play & pause -->
+  <a href="#pause" onclick="pauseButton()" class="pause-btn d-none-button" id="pause-btn">
+    <img src="images/pause.png" width="30" alt="" />
+</a>
+    <a href="#play" onclick="playButton()" class="play-btn d-none" id="play-btn">
+      <img src="images/play-button.png" width="30" alt="" />
+  </a>
+ 
+
+  <div class="body-overlay"></div>
 <div id="wrapper" class="clearfix">
   <!-- preloader -->
   <div id="preloader">
@@ -444,7 +498,7 @@
 
 
 <script>
-
+           
 // Audio
  var x = document.getElementById("myAudio"); 
 
@@ -453,12 +507,30 @@ function playAudio() {
   let main = document.getElementById("main-content");
   var opening = document.getElementById("opening");
   var time = document.getElementById("countdown-timer-soon-glow");
+  let btn_pause = document.getElementById("pause-btn");
+  let btn_play = document.getElementById("play-btn");
   opening.classList.add("d-none");
   header.classList.remove("d-none");
   main.classList.remove("d-none");
   time.classList.remove("d-none");
+  btn_pause.classList.add("d-none");
+  btn_play.classList.remove("d-none");
   x.play(); 
-}        
+} 
+function playButton() { 
+  let btn_pause = document.getElementById("pause-btn");
+  let btn_play = document.getElementById("play-btn");
+  btn_pause.classList.add("d-none");
+  btn_play.classList.remove("d-none");
+  x.play(); 
+}  
+function pauseButton() { 
+  let btn_pause = document.getElementById("pause-btn");
+  let btn_play = document.getElementById("play-btn");
+  btn_pause.classList.remove("d-none");
+  btn_play.classList.add("d-none");
+  x.pause(); 
+}             
 
    var script_url = "https://script.google.com/macros/s/AKfycbyzmOsgJ-HEj1dVXolp7sKOZbeNyj-4t8VC-dQGxrb8GmLrDksbHCnz_hN2JvIQ05A3/exec";
   function insert_value()
