@@ -1,0 +1,24 @@
+
+/* import google font */
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+
+* {
+    font-family: "Courgette";
+}
+
+.text-yaswarau {
+    color: #9b59b6;
+}
+
+.bg-yaswarau {
+    background-color: #9b59b6;
+}
+
+.bg-yaswarau:hover {
+    background-color: #9b59b6;
+}
+
+.border-yaswarau {
+    border-color: #9b59b6;
+}
