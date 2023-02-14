@@ -6,3 +6,19 @@
 * {
     font-family: "Courgette";
 }
+
+.text-ff7575 {
+    color: #ff7575;
+}
+
+.text-00b7ad {
+    color: #00b7ad;
+}
+
+.bg-00b7ad {
+    background-color: #00b7ad;
+}
+
+.bg-00b7ad:hover {
+    background-color: #03d1c7;
+}
