@@ -19,6 +19,26 @@
     /* background-color: #0fb9b1; */
     background: rgb(15,185,177);
     background: linear-gradient(90deg, rgba(15,185,177,1) 0%, rgba(26,209,201,1) 68%, rgba(29,212,204,1) 100%);
+    
+
+    backdrop-filter: saturate(180%) blur(10px);
+
+}
+
+.bg-yaswarau:before{
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5); */
+    filter: blur(5px);
+    /* opacity: 0.5; */
+    /* margin: -20px; */
+
 }
 
 .bg-yaswarau-red {
