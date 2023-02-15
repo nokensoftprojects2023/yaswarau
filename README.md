@@ -7,3 +7,7 @@ https://preview.themeforest.net/item/perfect-wedding-responsive-wedding-event-pl
 ## Main domain
 
 https://yaswarau.id
+
+## Emoticons
+
+🌎 🚀 💡
