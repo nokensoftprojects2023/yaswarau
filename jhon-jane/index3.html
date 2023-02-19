@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- YASWARAU STYLES -->
+    <link rel="stylesheet" href="css/style-turquoise.css" id="css">
+    
     <!-- <link rel="stylesheet" href="./css/style1.css"> -->
     <!-- <link rel="stylesheet" href="./css/style2.css"> -->
     <!-- <<link rel="stylesheet" href="./css/style-turquoise.css"> -->
@@ -30,7 +32,7 @@
     <!-- <link rel="stylesheet" href="./css/style-peterriver.css"> -->
     <!-- <link rel="stylesheet" href="./css/style-amethyst.css"> -->
     <!-- <link rel="stylesheet" href="./css/style-sunflower.css"> -->
-    <link rel="stylesheet" href="./css/style-carrot.css">
+    <!-- <link rel="stylesheet" href="./css/style-carrot.css"> -->
     <!-- <link rel="stylesheet" href="./css/style-alizarin.css"> -->
 
     <!-- <link rel="stylesheet" href="./css/style-sawtoothaak.css"> -->
@@ -127,12 +129,43 @@
             right: 2px;
             top: 5px;
         }
+
+        .warna {
+            /* display: block; */
+            /* transition: ease all 0.3s; */
+            position: fixed;
+            z-index: 9999;
+            width: 90%;
+            right: -950px;
+            top: 200px;
+        }
     </style>
 
 
 </head>
 
 <body class="text-center p-3">
+
+    <!-- Box Color -->
+    <div class="row warna">
+        <div class="col-md-4 col-6  bg-secondary">
+            <div class="mb-3 p-3">
+                <select id="selectColor" onchange="color()" class="form-select form-select-lg" name="" id="">
+                    <option value="turquoise" selected>Pilih Warna</option>
+                    <option value="turquoise">Turquoise</option>
+                    <option value="emerald">Emerald</option>
+                    <option value="peterriver">Peterriver</option>
+                    <option value="amethyst">Amethyst</option>
+                    <option value="sunflower">Sunflower</option>
+                    <option value="carrot">Carrot</option>
+                    <option value="alizarin">Alizarin</option>
+                    <option value="sawtoothaak">Sawtoothaak</option>
+                    <option value="purplecorallite">Purple Corallite</option>
+                    <option value="turquoisetopaz">Turquoisetopaz</option>
+                </select>
+            </div>
+        </div>
+    </div>
 <!-- button play & pause -->
 <div id="sound-controls">
     <a href="#pause" class="pause-btn d-none" onclick="pauseButton()" id="pause-btn">
@@ -208,28 +241,28 @@
 
                 <div class="col-12 mb-3">
 
-                    <div class="row text-yaswarau">
+                    <div class="row text-yaswarau" id="countdown">
                         <div class="col border rounded p-2 m-2">
                             <div class="card-box">
-                                <span class="h1 d-block fw-bold">01</span>
+                                <span class="h1 d-block fw-bold days">00</span>
                                 Hari
                             </div>
                         </div>
                         <div class="col border rounded p-2 m-2">
                             <div class="card-box">
-                                <span class="h1 d-block fw-bold">01</span>
+                                <span class="h1 d-block fw-bold hours">00</span>
                                 Jam
                             </div>
                         </div>
                         <div class="col border rounded p-2 m-2">
                             <div class="card-box">
-                                <span class="h1 d-block fw-bold">01</span>
+                                <span class="h1 d-block fw-bold minutes">00</span>
                                 Menit
                             </div>
                         </div>
                         <div class="col border rounded p-2 m-2">
                             <div class="card-box">
-                                <span class="h1 d-block fw-bold">01</span>
+                                <span class="h1 d-block fw-bold seconds">00</span>
                                 Detik
                             </div>
                         </div>
@@ -324,7 +357,7 @@
         <!-- DEVIDER END -->
 
         <!-- WEEDING & RESEPTION START -->
-        <section id="bride-groom" class="container border rounded shadow mb-5 p-5 d-none punchline animate__animated animate__fadeInUp animate__slow">
+        <section id="bride-groom-dua" class="container border rounded shadow mb-5 p-5 d-none punchline animate__animated animate__fadeInUp animate__slow">
 
             <div class="row">
                 <div class="col-12 mb-3">
@@ -492,7 +525,7 @@
         <!-- DEVIDER END -->
 
         <!-- GUEST BOOK START -->
-        <section id="gallery" class="container border rounded shadow mb-5 p-5 d-none punchline animate__animated animate__fadeInUp animate__slow">
+        <section id="book" class="container border rounded shadow mb-5 p-5 d-none punchline animate__animated animate__fadeInUp animate__slow">
 
             <div class="row">
                 <div class="col-12 mb-3">
@@ -579,6 +612,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
         <script>
             // Audio
@@ -587,8 +621,10 @@
             function playAudio() {
                 let home = document.getElementById("home");
                 var bride_groom = document.getElementById("bride-groom");
+                var bride_groom_dua = document.getElementById("bride-groom-dua");
                 var devider = document.getElementById("devider");
                 var gallery = document.getElementById("gallery");
+                var book = document.getElementById("book");
                 var devider_dua = document.getElementById("devider_dua");
 
                 let btn_pause = document.getElementById("pause-btn");
@@ -598,6 +634,8 @@
                 opening.classList.add("d-none");
                 home.classList.remove("d-none");
                 bride_groom.classList.remove("d-none");
+                book.classList.remove("d-none");
+                bride_groom_dua.classList.remove("d-none");
                 gallery.classList.remove("d-none");
                 devider_dua.classList.remove("d-none");
                 btn_pause.classList.remove("d-none");
@@ -623,83 +661,173 @@
             }
 
             // Waktu mundur
+            $(document).ready(function()
+                {
+                (function(e){
+                e.fn.countdown = function (t, n){
+                    function i(){
+                        eventDate = Date.parse(r.date) / 1e3;
+                        currentDate = Math.floor(e.now() / 1e3);
+                        //
+                        if(eventDate <= currentDate){
+                            n.call(this);
+                            clearInterval(interval)
+                        }
+                        //
+                        seconds = eventDate - currentDate;
+                        days = Math.floor(seconds / 86400);
+                        seconds -= days * 60 * 60 * 24;
+                        hours = Math.floor(seconds / 3600);
+                        seconds -= hours * 60 * 60;
+                        minutes = Math.floor(seconds / 60);
+                        seconds -= minutes * 60;
+                        //
+                        days == 1 ? thisEl.find(".timeRefDays").text("Days") : thisEl.find(".timeRefDays").text("Days");
+                        hours == 1 ? thisEl.find(".timeRefHours").text("Hours") : thisEl.find(".timeRefHours").text("Hours");
+                        minutes == 1 ? thisEl.find(".timeRefMinutes").text("Minutes") : thisEl.find(".timeRefMinutes").text("Minutes");
+                        seconds == 1 ? thisEl.find(".timeRefSeconds").text("Seconds") : thisEl.find(".timeRefSeconds").text("Seconds");
+                        //
+                        if(r["format"] == "on"){
+                            days = String(days).length >= 2 ? days : "0" + days;
+                            hours = String(hours).length >= 2 ? hours : "0" + hours;
+                            minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+                            seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+                        }
+                        //
+                        if(!isNaN(eventDate)){
+                            thisEl.find(".days").text(days);
+                            thisEl.find(".hours").text(hours);
+                            thisEl.find(".minutes").text(minutes);
+                            thisEl.find(".seconds").text(seconds)
+                        }
+                else{
+                errorMessage = "Invalid date. Example: 27 March 2025 17:00:00";
+                            alert(errorMessage);
+                            console.log(errorMessage);
+                            clearInterval(interval)
+                        }
+                    }
+                    //
+                    var thisEl = e(this);
+                    var r = {
+                        date: null,
+                        format: null
+                    };
+                    //
+                    t && e.extend(r, t);
+                    i();
+                    interval = setInterval(i, 1e3)
+                }
+            })(jQuery);
+            //
             $(document).ready(function(){
-	//
-        (function(e){
-		e.fn.countdown = function (t, n){
-			function i(){
-				eventDate = Date.parse(r.date) / 1e3;
-				currentDate = Math.floor(e.now() / 1e3);
-				//
-				if(eventDate <= currentDate){
-					n.call(this);
-					clearInterval(interval)
-				}
-				//
-				seconds = eventDate - currentDate;
-				days = Math.floor(seconds / 86400);
-				seconds -= days * 60 * 60 * 24;
-				hours = Math.floor(seconds / 3600);
-				seconds -= hours * 60 * 60;
-				minutes = Math.floor(seconds / 60);
-				seconds -= minutes * 60;
-				//
-				days == 1 ? thisEl.find(".timeRefDays").text("Days") : thisEl.find(".timeRefDays").text("Days");
-				hours == 1 ? thisEl.find(".timeRefHours").text("Hours") : thisEl.find(".timeRefHours").text("Hours");
-				minutes == 1 ? thisEl.find(".timeRefMinutes").text("Minutes") : thisEl.find(".timeRefMinutes").text("Minutes");
-				seconds == 1 ? thisEl.find(".timeRefSeconds").text("Seconds") : thisEl.find(".timeRefSeconds").text("Seconds");
-				//
-				if(r["format"] == "on"){
-					days = String(days).length >= 2 ? days : "0" + days;
-					hours = String(hours).length >= 2 ? hours : "0" + hours;
-					minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
-					seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
-				}
-				//
-				if(!isNaN(eventDate)){
-					thisEl.find(".days").text(days);
-					thisEl.find(".hours").text(hours);
-					thisEl.find(".minutes").text(minutes);
-					thisEl.find(".seconds").text(seconds)
-				}
-        else{
-          errorMessage = "Invalid date. Example: 27 March 2025 17:00:00";
-					alert(errorMessage);
-					console.log(errorMessage);
-					clearInterval(interval)
-				}
-			}
-			//
-			var thisEl = e(this);
-			var r = {
-				date: null,
-				format: null
-			};
-			//
-			t && e.extend(r, t);
-			i();
-			interval = setInterval(i, 1e3)
-		}
-	})(jQuery);
-	//
-	$(document).ready(function(){
-		function e(){
-			var e = new Date;
-			e.setDate(e.getDate() + 60);
-			dd = e.getDate();
-			mm = e.getMonth() + 1;
-			y = e.getFullYear();
-			futureFormattedDate = mm + "/" + dd + "/" + y;
-			return futureFormattedDate
-		}
-		//2023-02-15
-		$("#countdown").countdown({
-			date: "15 February 2023 23:59:59", // change date/time here - do not change the format!
-			format: "on"
-		});
-		
-	});
-});
+                function e(){
+                    var e = new Date;
+                    e.setDate(e.getDate() + 60);
+                    dd = e.getDate();
+                    mm = e.getMonth() + 1;
+                    y = e.getFullYear();
+                    futureFormattedDate = mm + "/" + dd + "/" + y;
+                    return futureFormattedDate
+                }
+                //2023-02-15
+                $("#countdown").countdown({
+                    date: "20 February 2023 23:59:59", // change date/time here - do not change the format!
+                    format: "on"
+                });
+                
+            });
+        });
+    
+    function color()
+    {
+        var select = document.getElementById('selectColor').value;
+        var head  = document.getElementsByTagName('head')[0];
+        var link  = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './css/style-turquoise.css';
+        link.media = 'all';
+        link.id   = css;
+        console.log(select);
+        if(select === 'turquoise'){
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-turquoise.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else if(select === 'emerald')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-emerald.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else if(select === 'peterriver')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-peterriver.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else if(select === 'amethyst')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-peterriver.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else if(select === 'sunflower')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-sunflower.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else if(select === 'carrot')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-carrot.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else if(select === 'alizarin')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-alizarin.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }
+        else if(select === 'sawtoothaak')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-sawtoothaak.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }
+        else if(select === 'purplecorallite')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-purplecorallite.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }
+        else if(select === 'turquoisetopaz')
+        {
+            link.rel  = 'stylesheet';
+            link.type = 'text/css';
+            link.href = './css/style-turquoisetopaz.css';
+            link.media = 'all';
+            head.appendChild(link);
+        }else{
+          
+        }
+    }
+
+  
 </script>
 </body>
 
