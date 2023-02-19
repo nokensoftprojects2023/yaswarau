@@ -1,4 +1,4 @@
-name: Deploy Website SaCode 2.2
+name: Deploy Website yaswarau
 on:
   push:
     branches:
