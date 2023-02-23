@@ -707,6 +707,21 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
         <script>
+            // Nama Undangan
+            let url = window.location.href;
+            console.log(url)
+            let cut = url.substr(52);
+        
+            if(cut==="")
+            {
+                document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
+            }else{
+                let nama = cut.replace(/-/g, " ");
+                document.getElementById("nama").innerHTML = nama;   
+            }
+            console.log(url)
+            console.log(cut)
+            console.log(nama)
             // Audio
             var x = document.getElementById("myAudio");
     
@@ -919,20 +934,7 @@
         }
     }
 
-    // Nama Undangan
-    let url = window.location.href;
-    let cut = url.substr(52);
-  
-    if(cut==="")
-    {
-        document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
-    }else{
-        let nama = cut.replace(/-/g, " ");
-        document.getElementById("nama").innerHTML = nama;   
-    }
-    console.log(url)
-    console.log(cut)
-    console.log(nama)
+
    
 
 </script>
