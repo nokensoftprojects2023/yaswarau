@@ -922,6 +922,7 @@
     // Nama Undangan
     let url = window.location.href;
     let cut = url.substr(52);
+  
     if(cut==="")
     {
         document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
@@ -929,6 +930,9 @@
         let nama = cut.replace(/-/g, " ");
         document.getElementById("nama").innerHTML = nama;   
     }
+    console.log(url)
+    console.log(cut)
+    console.log(nama)
    
 
 </script>
