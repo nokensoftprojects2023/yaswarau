@@ -27,7 +27,7 @@
     
     <!-- <link rel="stylesheet" href="./css/style1.css"> -->
     <!-- <link rel="stylesheet" href="./css/style2.css"> -->
-    <<link rel="stylesheet" href="./css/style-turquoise.css">
+    <link rel="stylesheet" href="./css/style-turquoise.css">
     <!-- <link rel="stylesheet" href="./css/style-emerald.css"> -->
     <!-- <link rel="stylesheet" href="./css/style-peterriver.css"> -->
     <!-- <link rel="stylesheet" href="./css/style-amethyst.css"> -->
@@ -293,7 +293,10 @@
 
                 <div class="col-12 mb-3 text-muted">
                     <h5 class="fw-bold my-3">Kepada Yth : <br> Bapak/Ibu/Saudara/i</h5>
-                    <h2></h2>
+                    <!-- Nama -->
+                    <span class="badge  rounded-pill text-bg-secondary mb-3 mt-3">
+                        <h3 class="align-self-center mx-5 mt-3 mb-3 " id="nama"> </h3>
+                    </span>
                     <p>Kami dengan suka cita mengundang Bapak/Ibu/Saudara/i untuk memberikan doa dan restu pada
                         pernikahan kami.</p>
                 </div>
@@ -821,7 +824,7 @@
                 }
                 //2023-02-15
                 $("#countdown").countdown({
-                    date: "20 February 2023 23:59:59", // change date/time here - do not change the format!
+                    date: "30 February 2023 23:59:59", // change date/time here - do not change the format!
                     format: "on"
                 });
                 
@@ -916,8 +919,18 @@
         }
     }
 
-  
+    // Nama Undangan
+    let url = window.location.href;
+    let cut = url.substr(51);
+    if(cut==="")
+    {
+        document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
+    }else{
+        let nama = cut.replace(/-/g, " ");
+        document.getElementById("nama").innerHTML = nama;   
+    }
+   
+
 </script>
 </body>
-
 </html>
