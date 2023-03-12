@@ -382,7 +382,18 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     
     <!-- Nama tamu -->
-    <script src="js/nama-tamu-dua.js"></script>
+    <script >
+         let url = window.location.href;
+    let cut = url.substr(47);
+    if(cut==="")
+    {
+        document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
+    }else{
+        let nama = cut.replace(/-/g, " ");
+        document.getElementById("nama").innerHTML = nama;   
+    }
+
+    </script>
     
     <!-- Waktu mundur -->
     <script src="js/waktu-mundur.js"></script>
