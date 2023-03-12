@@ -22,6 +22,9 @@
     <!-- ANIMATE -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+     <!-- SWEETALERT -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <!-- YASWARAU STYLES -->
     <!-- <link rel="stylesheet" href="css/style-turquoise.css" id="css"> -->
     
@@ -291,12 +294,12 @@
                 </div>
                 <!-- .col end -->
 
-                <div class="col-12 mb-3 text-muted">
+                <div class="col-12 mb-3 text-muted ">
                     <h5 class="fw-bold my-3">Kepada Yth : <br> Bapak/Ibu/Saudara/i</h5>
                     <!-- Nama -->
-                    <span class="badge  rounded-pill text-bg-secondary mb-3 mt-3">
-                        <h3 class="align-self-center mx-5 mt-3 mb-3 " id="nama"> </h3>
-                    </span>
+                    <div class=" rounded-pill text-bg-secondary mb-3 mt-3 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h4 class="align-self-center mx-5 mt-3 mb-3 p-3" id="nama"> </h4>
+                    </div>
                     <p>Kami dengan suka cita mengundang Bapak/Ibu/Saudara/i untuk memberikan doa dan restu pada
                         pernikahan kami.</p>
                 </div>
@@ -504,6 +507,72 @@
 
         </section>
         <!-- WEEDING & RESEPTION END -->
+
+          <!-- DOMPET START -->
+          <section id="dompet" class="container border rounded shadow mb-5 p-5 punchline animate__animated animate__fadeInUp animate__slow">
+
+            <div class="row">
+                <div class="col-12 mb-3">
+
+                    <h1 class="display-1 fw-bold my-3 text-yaswarau">Dompet Digital</h1>
+
+                    <!-- divider -->
+                    <img src="./img/Logo-Bank-Pembangunan-Daerah-Papua.png" alt="divider" class=" col-8 col-lg-3 my-3 d-block mx-auto">
+                    <img src="./img/divider/2.png" alt="divider" class="img-fluid col-4 col-lg-3 my-3 d-block mx-auto">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-md-6 col-lg-6 col-sm-12 col-12">
+                            <ul class="list-group">
+                                <li class="list-group-item align-items-center">
+                                   No Rekening 
+                                </li>
+                                <li class="list-group-item" id="rek">
+                                  1234 5678 9010
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-grid grap-2">
+                                        <a href="#rek" id="btn-dompet" class="btn btn-secondary ">Salin  <i class="fa-solid fa-clipboard"> </i></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+
+                    
+                </div>
+                <!-- .col end -->
+
+                <div class="col-12 mb-3">
+
+                    <h1 class="display-1 fw-bold my-3 text-yaswarau">Resepsi</h1>
+
+                    <!-- divider -->
+                    <img src="./img/divider/2.png" alt="divider" class="img-fluid col-4 col-lg-3 my-3 d-block mx-auto">
+
+                    <ul class="list-group">
+                        <li class="list-group-item text-muted">
+                            <i class="fa-solid fa-calendar me-2"></i> Rabu, 15 Februari 2023
+                        </li>
+                        <li class="list-group-item text-muted">
+                            <i class="fa-solid fa-clock"></i> 15.00 WIT
+                        </li>
+                        <li class="list-group-item text-muted">
+                            <i class="fa-solid fa-map-marker"></i> Cafe Efata (Dumangkarai) Doyo Lama Waibu
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- .col end -->
+
+                <div class="col-12 mb-3">
+
+                </div>
+                <!-- .col end -->
+            </div>
+            <!-- .row end -->
+
+        </section>
+        <!-- DOMPET END -->
 
         <!-- DEVIDER START -->
         <section id="devider" class="container border rounded shadow mb-5 p-5 d-none punchline animate__animated animate__fadeInUp animate__slow"
@@ -719,9 +788,7 @@
                 let nama = cut.replace(/-/g, " ");
                 document.getElementById("nama").innerHTML = nama;   
             }
-            console.log(url)
-            console.log(cut)
-            console.log(nama)
+           
             // Audio
             var x = document.getElementById("myAudio");
     
@@ -766,6 +833,22 @@
                 btn_play.classList.remove("d-none");
                 x.pause();
             }
+
+
+            const copyBtn = document.getElementById('btn-dompet')
+            const copyText = document.getElementById('rek')
+
+            copyBtn.onclick = () => {
+                copyText.select();
+                let teks = copyText.value;
+                    Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'success',
+                    text: 'Nomor Rekening Berhasil Disalin !! ',
+                    showConfirmButton: false,
+                    timer: 3000 })
+               
+            }
+
 
             // Waktu mundur
             $(document).ready(function()
