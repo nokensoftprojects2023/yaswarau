@@ -17,7 +17,7 @@ copyBtn.onclick = () => {
         let base_url = window.location.href;
         let url = `Shalom jangan lupa datang dalam acara pernikahan kami 😇
         
-http://127.0.0.1:5500/azarya-maya/index.html?nama=${nama}
+https://yaswarau.id/azarya-maya/index.html?nama=${nama}
 
 Azarya & Maya
 Terimakasih 😁`;

@@ -1,6 +1,6 @@
     // Nama Undangan
     let url = window.location.href;
-    let cut = url.substr(50);
+    let cut = url.substr(48);
 
     if(cut==="")
     {
