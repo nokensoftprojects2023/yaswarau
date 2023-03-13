@@ -14,7 +14,6 @@
     <link href="../images/favicon-yaswarau.png" rel="shortcut icon" type="image/png">
 
     
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
 
      <!-- SWEETALERT -->
@@ -50,7 +49,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style-turquoisetopaz.css">
+    <!-- <link rel="stylesheet" href="./css/style-turquoisetopaz.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -131,7 +130,7 @@
 
 </head>
 
-<body class="text-center">
+<body class="text-center" >
     <!-- button play & pause -->
     <div id="sound-controls">
         <a href="#pause" class="pause-btn d-none" onclick="pauseButton()" id="pause-btn">
@@ -145,7 +144,8 @@
         <source src="music/music.mp3" type="audio/mpeg">
         Browser kamu tidak support untuk memutar musik
     </audio>
-    <div id="intro" class="container-fluid" style="padding-bottom: 100px; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
+    <div id="intro" class="container-fluid" style="padding-bottom: 100%; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
+    <!-- <div id="intro" class="container-fluid" style="padding-bottom: 100%; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;"> -->
         <div class="row animate__animated animate__fadeInLeft animate__slow">
             <div class="col-lg-12">
                 <div class="mb-4">
@@ -188,7 +188,7 @@
 
             <div class="col-lg-12">
 
-                <img src="divider/3.png" width="20" class="col-lg-4 col-12" alt="">
+                <img src="divider/3.png" width="300"  alt="">
                 <!-- divider end -->
 
                 <div class="mb-4 ">
@@ -263,7 +263,7 @@
 
             <div class="col-lg-12">
 
-                <img src="divider/3.png" class="col-lg-4 col-12" alt="">
+                <img src="divider/3.png" width="300"  alt="">
                 <!-- divider end -->
 
                 <div class="mb-4 font-style-dua animate__animated animate__fadeInLeft animate__slow ">
@@ -275,7 +275,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4  col-sm-12 p-2 col-md-12">
-                            <img src="couple/3a.png" class="rounded-circle border shadow mb-3 m-lg-5 img-thumbnail" alt="" width="200px">
+                            <img src="couple/3a.png" class="rounded-circle border shadow mb-3 m-lg-5 img-thumbnail" alt="" width="300" >
                             <h2 class="display-8 font-GreatVibes fw-bold mb-3">Azarya B. Patty</h1>
                             <p class="text-danger fw-bold">Putra Pertama dari Bpk. Daniel Dominggus Patty & Ibu Martha Dode</p>
                         </div>
@@ -300,12 +300,12 @@
         <div class="row">
             <div class="col-lg-6 mx-auto p-5 my-5">
 
-                <img src="divider/3.png" class="col-lg-6 col-8 my-3" alt="">
+                <img src="divider/3.png" width="300"  alt="">
                 <!-- divider end -->
 
                 <p class="h4">Tuhan membuat segala sesuatu indah pada waktu-Nya, Indah saat Dia mempertemukan, Indah saat Dia menumbuhkan kasih, dan Indah saat Dia Mempersatukan putra-putri kami dalam pernikahan kudus</p>
                 
-                <img src="divider/3.png" class="col-lg-6 col-8 my-3" alt="">
+                <img src="divider/3.png" width="300"  alt="">
                 <!-- divider end -->
 
             </div>
@@ -318,8 +318,7 @@
 
             <div class="col-lg-12">
 
-                <img src="divider/3.png" class="col-lg-4 col-12" alt="">
-                <!-- divider end -->
+                <img src="divider/3.png"  class="mb-5" width="300" alt="">
 
                 <div class="mb-4">
                     <h1 class="display-1 font-GreatVibes fw-bold">Buku Tamu</h1>
@@ -378,22 +377,9 @@
         crossorigin="anonymous"></script>
 
     <!-- JQUERY -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- Nama tamu -->
-    <script >
-         let url = window.location.href;
-    let cut = url.substr(48);
-    if(cut==="")
-    {
-        document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
-    }else{
-        let nama = cut.replace(/-/g, " ");
-        document.getElementById("nama").innerHTML = nama;   
-    }
-
-    </script>
-    
     <!-- Waktu mundur -->
     <script>
         $(document).ready(function()
@@ -474,6 +460,21 @@
         });
         });
     </script>
+
+
+    <script >
+         let url = window.location.href;
+    let cut = url.substr(48);
+    if(cut==="")
+    {
+        document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`; 
+    }else{
+        let nama = cut.replace(/-/g, " ");
+        document.getElementById("nama").innerHTML = nama;   
+    }
+
+    </script>
+    
 
 
     <!-- Buku Tamu -->
