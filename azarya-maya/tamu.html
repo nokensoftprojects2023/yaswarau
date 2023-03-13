@@ -83,39 +83,35 @@
             animation-iteration-count: infinite;
             animation-timing-function: linear;
         }
-
-
-  
-
     </style>
 
 </head>
 
 <body class="text-center">
 
-    <div id="intro" class="container-fluid" style="padding-bottom: 100px; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
+    <div id="intro" class="container-fluid" style="padding-bottom: 100%; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-6">
                 <div class="mb-4">
-                    <h4 class="mb-3 font-style text-uppercase  fw-bold">Kirim Undangan Pernikahan</h4>
+                    <h4 class="mb-3 font-style text-uppercase fw-bold">Kirim Undangan Pernikahan</h4>
                     <h2 class="font-style mb-5 fw-bold text-capitalize">Azarya & Maya</h2>
                 </div>
-                <div>
-                    <p class="fw-bold h4">NAMA TAMU</p>
-                    
-                    <!-- Nama tamu undangan -->
-                    <div class="tamu-udangan d-flex justify-content-center">
-                        <div class="col-lg-6 col-md-6 col-sm-10 text-white fw-bold mb-4 col-10">
-                            <input type="text" class="form-control rounded-5 shadow" name="tamu" id="tamu"  placeholder="masukan nama tamu">
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <a href="#tamu"  id="btn-undangan" class="btn btn-md btn-dark bg-yaswarau border-0">
-                        <i class="fa-solid fa-clipboard"></i> Salin Link Undangan
-                    </a>
                 </div>
             </div>
+            <div>
+                <p class="fw-bold h4">NAMA TAMU</p>
+                <!-- Nama tamu undangan -->
+                <div class="tamu-udangan d-flex justify-content-center">
+                    <div class="col-lg-6 col-md-6 col-sm-10 text-white fw-bold mb-4 col-10">
+                        <input type="text" class="form-control rounded-5 shadow mb-4" name="tamu" id="tamu"  placeholder="masukan nama tamu">
+
+                        <a href="#tamu"  id="btn-undangan" class="btn btn-md btn-dark bg-yaswarau border-0">
+                            <i class="fa-solid fa-clipboard"></i> Salin Link Undangan
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
         </div>
         <!-- .row end -->
     </div>
@@ -141,7 +137,7 @@
                 Swal.fire({         //displays a pop up with sweetalert
                 icon: 'error',
                 text: 'Masukan nama tamu dengan benar',
-                showConfirmButton: false,
+                showConfirmButton: true,
                 timer: 3000
             });
             }else{
@@ -159,7 +155,7 @@ Terimakasih 😁`;
                 Swal.fire({         //displays a pop up with sweetalert
                     icon: 'success',
                     text: 'Link sudah tersalin !!',
-                    showConfirmButton: false,
+                    showConfirmButton: true,
                     timer: 3000
                 });
             }
