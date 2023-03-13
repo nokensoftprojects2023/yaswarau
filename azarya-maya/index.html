@@ -146,7 +146,7 @@
         <source src="music/music.mp3" type="audio/mpeg">
         Browser kamu tidak support untuk memutar musik
     </audio>
-    <div id="intro" class="" style="padding-bottom: 100%; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
+    <div id="intro" class="container-fluid" style="padding-bottom: 100px; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
         <div class="row animate__animated animate__fadeInLeft animate__slow">
             <div class="col-lg-12">
                 <div class="mb-4">
@@ -183,16 +183,16 @@
     <!-- #intro end -->
 
     <!-- <div id="home" class="container-fluid p-5 h-100" style="padding-bottom: 100px; padding-top: 100px; background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;"> -->
-    <div id="lokasi" class="d-none" style="padding-bottom: 100px; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
+    <div id="lokasi" class="container-fluid d-none animate__animated animate__fadeInLeft animate__slow" style="padding-bottom: 100px; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
 
         <div class="row">
 
             <div class="col-lg-12">
 
-                <img src="divider/3.png" class="col-lg-4 col-12" alt="">
+                <img src="divider/3.png" width="20" class="col-lg-4 col-12" alt="">
                 <!-- divider end -->
 
-                <div class="mb-4 animate__animated animate__fadeInLeft animate__slow">
+                <div class="mb-4 ">
                     <h1 class="display-1 font-GreatVibes fw-bold mb-5">Pernikahan Dari</h1>
                     <h1 class="display-4  fw-bold font-style ">Azarya Binoni Patty</h1>
                     <span class="h1 ">&</span>
@@ -201,7 +201,7 @@
                         KAMIS | 23 | MARET | 2023
                     </h2>
                 </div>
-                <div class="col-12 mb-3 container font-style-tiga animate__animated animate__fadeInRight animate__slow">
+                <div class="col-12 mb-3 container font-style-tiga ">
                     <div class="row" id="countdown">
                         <div class="col border rounded p-2 m-2 bg-white">
                             <div class="card-box">
@@ -297,7 +297,7 @@
     </div>
     <!-- #home end --> 
 
-    <div id="firman" class="d-none" style="background-image: url('bg/5.jpg');">
+    <div id="firman" class="container-fluid d-none" style="background-image: url('bg/5.jpg');">
         <div class="row">
             <div class="col-lg-6 mx-auto p-5 my-5">
 
@@ -360,7 +360,7 @@
     <!-- #home end --> 
 
         <!-- FOOTER START -->
-        <footer class="text-muted py-5 border-top bg-dark text-white d-none" id="footer">
+        <footer class="container-fluid text-muted py-5 border-top bg-dark text-white d-none" id="footer">
             <div class="container">
                 <p class="">
                     <a href="#" class="text-white text-decoration-none">Term & Condition</a> |
@@ -478,10 +478,85 @@
 
 
     <!-- Buku Tamu -->
-    <script src="js/buku-tamu.js"></script>
+    <script>
+        var script_url = "https://script.google.com/macros/s/AKfycbzh5vxrHUFkWP4oRE9fm23EePdIU_Tor7dRG1YR_M0FRM-aprbO_S8urx6lQX9xbhDe/exec";
+        function insert_value() {
+            let nama = $("#nama_lengkap").val();
+            let ucapan = $("#ucapan").val();
+            let kehadiran = $("#kehadiran").val();
+            if (nama && ucapan && kehadiran) {
+                let url = script_url + "?callback=ctrlq&nama=" + nama + "&ucapan=" + ucapan + "&kehadiran=" + kehadiran + "&action=insert";
+                $("input[type='text']").val("");
+                $("textarea").val("");
+                var request = jQuery.ajax({
+                    crossDomain: true,
+                    url: url,
+                    method: "GET",
+                    dataType: "jsonp"
+                });
+
+
+                Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'success',
+                    text: 'Pesan sudah tersimpan !',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            } else {
+                Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'error',
+                    text: 'Semua belum terisi !!',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            }
+        }
+    </script>
 
     <!-- Audio -->
-    <script src="js/audio.js"></script>
+    <script>
+        var x = document.getElementById("myAudio");
+    
+        function playAudio() {
+            let intro = document.getElementById("intro");
+            var lokasi = document.getElementById("lokasi");
+            var bride_groom = document.getElementById("bride-room");
+            var firman = document.getElementById("firman");
+            var footer = document.getElementById("footer");
+            var buku_tamu = document.getElementById("buku-tamu");
+        
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            let sound_controls = document.getElementById("sound-controls");
+        
+            intro.classList.add("d-none");
+            bride_groom.classList.remove("d-none");
+            lokasi.classList.remove("d-none");
+            buku_tamu.classList.remove("d-none");
+            footer.classList.remove("d-none");
+            firman.classList.remove("d-none");
+            btn_pause.classList.remove("d-none");
+            btn_play.classList.add("d-none");
+            sound_controls.classList.remove("d-none");
+            x.play();
+        }
+        
+        function playButton() {
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            btn_pause.classList.remove("d-none");
+            btn_play.classList.add("d-none");
+            x.play();
+        }
+        
+        function pauseButton() {
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            btn_pause.classList.add("d-none");
+            btn_play.classList.remove("d-none");
+            x.pause();
+        }
+    </script>
 
 </body>
 

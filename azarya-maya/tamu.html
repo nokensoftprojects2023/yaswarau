@@ -93,8 +93,7 @@
 
 <body class="text-center">
 
-    <div id="intro" class="" style="height: 100%; padding-top: 100px; background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover; background-repeat: no-repeat;
-    ">
+    <div id="intro" class="container-fluid" style="padding-bottom: 100%; padding-top: 100px; ;background-image: url('https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?w=740&t=st=1678379729~exp=1678380329~hmac=0b8db6189eb35964fdad250bb5493df4ae175e9228a4eeea81693d71fad1dfc9');background-size: cover;">
         <div class="row">
             <div class="col-lg-12">
                 <div class="mb-4">
@@ -106,7 +105,7 @@
                     
                     <!-- Nama tamu undangan -->
                     <div class="tamu-udangan d-flex justify-content-center">
-                        <div class="col-lg-3 col-md-4 col-sm-10 text-white fw-bold mb-4 col-10">
+                        <div class="col-lg-6 col-md-6 col-sm-10 text-white fw-bold mb-4 col-10">
                             <input type="text" class="form-control rounded-5 shadow" name="tamu" id="tamu"  placeholder="masukan nama tamu">
                         </div>
                     </div>
@@ -130,7 +129,43 @@
         crossorigin="anonymous"></script>
 
     <!-- UDANGAN -->
-    <script src="js/udangan-dua.js"></script>
+    <script>
+        const copyBtn = document.getElementById('btn-undangan')
+        const copyText = document.getElementById('tamu')
+
+        copyBtn.onclick = () => {
+            copyText.select();
+            let teks = copyText.value;
+            if(teks === '')
+            {
+                Swal.fire({         //displays a pop up with sweetalert
+                icon: 'error',
+                text: 'Masukan nama tamu dengan benar',
+                showConfirmButton: false,
+                timer: 3000
+            });
+            }else{
+                let nama = teks.replace(/ /g,"-");
+                let base_url = window.location.href;
+                let url = `Shalom jangan lupa datang dalam acara pernikahan kami 😇
+                
+https://yaswarau.id/azarya-maya/index.html?nama=${nama}
+
+Azarya & Maya
+Terimakasih 😁`;
+                navigator.clipboard.writeText(url);
+                // let url =
+                document.execCommand('copy');    // Simply copies the selected text to clipboard 
+                Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'success',
+                    text: 'Link sudah tersalin !!',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            }
+        
+        }
+    </script>
 </body>
 
 </html>
