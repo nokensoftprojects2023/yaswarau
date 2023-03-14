@@ -11,3 +11,20 @@ https://yaswarau.id
 ## Emoticons
 
 🌎 🚀 💡
+
+
+# PROJECTS
+
+## Azarya & Maya
+
+https://yaswarau.id/azarya-maya/
+
+Halaman Buat undangan
+yaswarau.id/azarya-maya/tamu.html
+
+Halaman utama
+https://yaswarau.id/azarya-maya/index.html?nama=samuel-bosawer
+
+
+Buku tamu 
+https://docs.google.com/spreadsheets/d/1LE42nePLDymvHqmOoPAQYUQ4OWMNK3l2qYJqrWfAO6k/edit?usp=sharing
