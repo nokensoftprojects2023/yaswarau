@@ -20,7 +20,7 @@ https://yaswarau.id
 https://yaswarau.id/azarya-maya/
 
 Halaman Buat undangan
-yaswarau.id/azarya-maya/tamu.html
+https://yaswarau.id/azarya-maya/tamu.html
 
 Halaman utama
 https://yaswarau.id/azarya-maya/index.html?nama=samuel-bosawer
