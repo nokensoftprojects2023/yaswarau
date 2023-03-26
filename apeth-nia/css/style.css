@@ -15,11 +15,12 @@ body {
 }
 
 /* music controls */
+
 .play-btn {
     display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
     text-align: center;
     color: white;
     font-size: 30px;
@@ -30,16 +31,16 @@ body {
     transition: ease all 0.3s;
     position: fixed;
     z-index: 9999;
-    right: 2px;
+    right: 5px;
     top: 5px;
 
 }
 
 .pause-btn {
     display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
     text-align: center;
     color: white;
     font-size: 30px;
@@ -50,6 +51,6 @@ body {
     transition: ease all 0.3s;
     position: fixed;
     z-index: 9999;
-    right: 2px;
+    right: 5px;
     top: 5px;
 }
