@@ -44,65 +44,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Euphoria Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Walkway Black" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata" rel="stylesheet">
 
-
-    <style>
-        html,
-        body {
-            font-family: 'Delicious Handrawn';
-        }
-
-        .font-style1 {
-            font-family: 'Delicious Handrawn', cursive;
-        }
-
-        .goyang-4 img {
-            animation-name: goyang4;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        /* music controls */
-        .play-btn {
-            display: block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            text-decoration: none;
-            transition: ease all 0.3s;
-            position: fixed;
-            z-index: 9999;
-            right: 2px;
-            top: 5px;
-
-        }
-
-        .pause-btn {
-            display: block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            text-decoration: none;
-            transition: ease all 0.3s;
-            position: fixed;
-            z-index: 9999;
-            right: 2px;
-            top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
@@ -130,17 +74,17 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="mb-4">
-                    <h1 class="display-5  mb-0 font-style-tiga text-capitalize fw-bold ">Undangan Pernikahan
+                    <h1 class="display-4 font-style-tiga text-capitalize fw-bold ">Undangan Pernikahan
                     </h1>
-                    <h1 class="font-style mb-5 fw-bold text-capitalize mt-3 display-1">Apeth & Nia</h1>
+                    <h1 class="font-style my-5 fw-bold text-capitalize mt-3 display-1">Apeth & Nia</h1>
                 </div>
                 <div class="mb-4">
                     <!-- <img src="couple/1.png" class="img-thumbnail rounded-circle shadow col-lg-3 mx-auto goyang-4" alt=""> -->
                     <img src="images/intro.png" class="col-lg-3 mx-auto goyang-4 rounded-circle" alt="">
                 </div>
                 <div>
-                    <p class="h4 fw-bold ">Kepada Yth :</p>
-                    <p class="h4 fw-bold mb-4 ">Bapak/Ibu/Saudara/i</p>
+                    <p class="fs-1 fw-bold ">Kepada Yth :</p>
+                    <p class="fs-2 fw-bold mb-4 ">Bapak/Ibu/Saudara/i</p>
 
                     <!-- Nama tamu undangan -->
                     <div class="tamu-udangan d-flex justify-content-center">
@@ -150,13 +94,13 @@
                     </div>
 
                     <div class="fst-italic">
-                        <p class="mb-0 ">Kami dengan suka cita mengundang Bapak/Ibu/Saudara/i <br> untuk
+                        <p class="fs-3 col-8 mx-auto">Kami dengan suka cita mengundang Bapak/Ibu/Saudara/i <br> untuk
                             memberikan doa dan restu pada pernikahan kami.</p>
                     </div>
 
                 </div>
                 <div>
-                    <a href="#lokasi" onclick="playAudio()" class="btn btn-lg btn-dark mt-3 "><i
+                    <a href="#lokasi" onclick="playAudio()" class="btn btn-lg btn-dark mt-3 fs-1 px-5 py-4 "><i
                             class="fa-solid fa-paper-plane me-2"></i> Buka Undangan</a>
                 </div>
             </div>
