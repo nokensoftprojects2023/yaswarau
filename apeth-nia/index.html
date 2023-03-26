@@ -501,14 +501,13 @@
 
     <script>
         let url = window.location.href;
-        let cut = url.substr(48);
+        let cut = url.substr(46);
         if (cut === "") {
             document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`;
         } else {
             let nama = cut.replace(/-/g, " ");
             document.getElementById("nama").innerHTML = nama;
         }
-
     </script>
 
     <!-- Buku Tamu -->
