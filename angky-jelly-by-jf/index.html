@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta property="og:type" content="Yaswarau" />
+    <meta property="og:title" content="Apeth & Nia" />
+    <meta property="og:description" content="Wedding Invitation" />
+    <meta property="og:url" content="https://yaswarau.id/apeth-nia" />
+    <meta property="og:site_name" content="Yaswarau" />
+    <meta property="og:image" content="https://yaswarau.id/apeth-nia/images/cover.jpg" />
+    <title>Apeth & Nia - Wedding Invitation</title>
+
+    <!-- Favicon and Touch Icons -->
+    <link href="../images/favicon-yaswarau.png" rel="shortcut icon" type="image/png">
+
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Shantell+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Euphoria Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Walkway Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata" rel="stylesheet">
+
+    <!-- YASWARAU STYLES -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body class="text-center">
+
+    <!-- button play & pause start -->
+    <div id="sound-controls">
+        <a href="#pause" class="pause-btn d-none" onclick="pauseButton()" id="pause-btn">
+            <img src="images/pause.png" srcset="" width="80" alt="Pause Button">
+        </a>
+        <a href="#play" onclick="playButton()" class="play-btn d-none" id="play-btn">
+            <img src="images/play-button.png" width="80" alt="Play Button">
+        </a>
+    </div>
+    <!-- button play & pause end -->
+
+    <audio id="myAudio">
+        <source src="music/music.mp3" type="audio/mpeg">
+        Browser kamu tidak support untuk memutar musik
+    </audio>
+
+    <!-- #intro start -->
+    <div id="intro" class="container-fluid"
+        style="padding-bottom: 100%; padding-top: 100px; ;background-image: url('');background-size: cover;background-position: center;">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="mb-4">
+                    <h1 class="display-4 font-style-tiga text-capitalize fw-bold text-gold">Undangan Pernikahan
+                    </h1>
+                    <h1 class="font-style my-5 fw-bold text-capitalize mt-3 display-1 text-gold">Angky & Jeli</h1>
+                </div>
+                <div class="mb-4">
+                    <!-- <img src="couple/1.png" class="img-thumbnail rounded-circle shadow col-lg-3 mx-auto goyang-4" alt=""> -->
+                    <img src="gallery/1.jpg" class="border border-light p-2 w-100" alt="Image Cover">
+                </div>
+                <div class="mt-5 text-gold">
+                    <p class="fs-1 fw-bold ">Kepada Yth :</p>
+                    <p class="fs-2 fw-bold mb-4 ">Bapak/Ibu/Saudara/i</p>
+
+                    <!-- Nama tamu undangan -->
+                    <div class="tamu-udangan d-flex justify-content-center">
+                        <div class="w-100">
+                            <p class="shadow px-5 py-4 rounded-0 p-3 fw-bold fs-2 text-uppercase" id="nama"></p>
+                        </div>
+                    </div>
+
+                    <div class="fst-italic">
+                        <p class="fs-3 col-8 mx-auto my-5">Kami dengan suka cita mengundang Bapak/Ibu/Saudara/i <br> untuk
+                            memberikan doa dan restu pada pernikahan kami.</p>
+                    </div>
+
+                </div>
+                <div class="py-5">
+                    <a href="#lokasi" onclick="playAudio()" class="mt-3 fs-1 px-5 py-5 bg-gold text-dark btn rounded-0">
+                        <span class="display-1"><i class="fa-solid fa-paper-plane me-2"></i> Buka Undangan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- #intro end -->
+
+    <!-- #home start -->
+    <div id="lokasi" class="container-fluid d-none"
+        style="padding-bottom: 100px; padding-top: 100px; ;background-image: url('');background-size: cover;">
+
+        <div class="row">
+
+            <div class="col-lg-10 mx-auto">
+
+                <!-- divider start -->
+                <img src="divider/2.png" class="my-5" width="400" alt="Divider">
+                <!-- divider end -->
+
+                <div class="mb-3">
+                    <div class="pb-5">
+                        <h1 class="display-5 fw-bold mb-5 font-style1">Pernikahan Dari</h1>
+                        <h1 class="display-2 fw-bold text-gold">Fredrik Yobi (Apeth)</h1>
+                        <span class="fs-1 ">&</span>
+                        <h1 class="display-2  fw-bold text-gold">Hansina Afaar (Nia)</h1>
+                    </div>
+                    <h2 class="mt-5 display-4">
+                        Kamis | 6 | April | 2023
+                    </h2>
+                </div>
+
+                <!-- timer start -->
+                <div class="col-12 mb-3 container font-style-tiga ">
+                    <div class="row text-dark" id="countdown">
+                        <div class="col border rounded p-2 py-5 m-2 bg-white">
+                            <div class="card-box">
+                                <span class="h1 d-block fw-bold days">00</span>
+                                Hari
+                            </div>
+                        </div>
+                        <div class="col border rounded p-2 py-5 m-2 bg-white">
+                            <div class="card-box">
+                                <span class="h1 d-block fw-bold hours">00</span>
+                                Jam
+                            </div>
+                        </div>
+                        <div class="col border rounded p-2 py-5 m-2 bg-white">
+                            <div class="card-box">
+                                <span class="h1 d-block fw-bold minutes">00</span>
+                                Menit
+                            </div>
+                        </div>
+                        <div class="col border rounded p-2 py-5 m-2 bg-white">
+                            <div class="card-box">
+                                <span class="h1 d-block fw-bold seconds">00</span>
+                                Detik
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- timer end -->
+
+                <div class=" font-style-dua rounded-5 animate__animated animate__fadeInLeft animate__slow text-dark">
+
+                    <div class="bg-light m-5 p-5 rounded shadow">
+
+                        <!-- divider start -->
+                        <img src="divider/2.png" class="my-5" width="400" alt="Divider">
+                        <!-- divider end -->
+
+                        <div class="col-10 mx-auto">
+                            <p class="mb-5 fs-3">Dengan segala kerendahan hati dan dengan ungkapan syukur atas kasih
+                                Karunia Tuhan, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan
+                                putra-putri kami yang akan diselenggarakan pada :</p>
+                        </div>
+
+                        <div class="col-10 mx-auto mt-5">
+                            <p class="fs-1 fw-bold"><i class="fa-solid fa-calendar-days"></i> Kamis, 6 April 2023</p>
+
+                            <div>
+                                <p class="fs-1 fw-bold mt-5 mb-3 font-style1 text-uppercase">Pemberkatan:</p>
+
+                                <p class="fs-3 fw-bold"><i class="fa-solid fa-clock"></i> Pukul 10.00 WIT </p>
+                                <!-- <p class="fs-3 fw-bold"><i class="fa-solid fa-location-dot"></i> Bertempat di Gedung Gereja GKI
+                                    Kairos Kampung Tiba-Tiba </p> -->
+
+                                <a href="https://goo.gl/maps/ZGWFQ3yMateqjcnT6" target="_blank" class="btn btn-outline-dark btn-lg p-3 fs-3 py-4 px-5">
+                                    <i class="fa-solid fa-location-dot"></i> Bertempat di Gedung Gereja GKI Kairos Kampung Tiba-Tiba
+                                </a>
+                            </div>
+
+                            <div>
+                                <p class="fs-1 fw-bold mt-5 mb-3 font-style1 text-uppercase">Resepsi:</p>
+
+                                <p class="fs-3 fw-bold"><i class="fa-solid fa-clock"></i> Pukul 16.00 WIT </p>
+                                <!-- <p class="fs-3 fw-bold"><i class="fa-solid fa-location-dot"></i> D'sante, Pantai Holtekamp. </p> -->
+
+                                <a href="https://goo.gl/maps/JUKKc3NkNsX6ZF279" target="_blank" class="btn btn-outline-dark btn-lg p-3 fs-3 py-4 px-5">
+                                    <i class="fa-solid fa-location-dot"></i> D'sante, Pantai Holtekamp.
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-10 mx-auto mt-5">
+                            <p class="fs-3">Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan Doa restu kepada Kedua Mempelai.</p>
+                            <p class="fs-3">Tiada kata yang dapat kami ungkapkan selain rasa terima kasih atas kehadiran dan doa restu Bapak/Ibu/Saudara/i.</p>
+                        </div>
+
+                        <!-- divider start -->
+                        <img src="divider/2.png" class="my-5" width="400" alt="Divider">
+                        <!-- divider end -->
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- .row end -->
+
+    </div>
+    <!-- #home end -->
+
+    <!-- #bride & groom start -->
+    <div id="bride-groom" class="container-fluid p-10 d-none"
+        style="background-image: url('');background-size: cover;">
+
+        <div class="row">
+
+            <div class="col-lg-10 mx-auto py-5">
+
+                <!-- divider start -->
+                <img src="divider/2.png" class="my-5" width="400" alt="Divider">
+                <!-- divider end -->
+
+                <div class="mb-5 font-style animate__animated animate__fadeInLeft animate__slow col-10 mx-auto">
+                    <p class="fs-2">Tuhan membuat segala sesuatu indah pada waktuNya. Indah saat Dia mempertemukan, indah saat Dia menumbuhkan kasih, dan indah saat Dia mempersatukan putra-putri kami dalam satu ikatan Pernikahan Kudus.</p>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mx-auto">
+                            <div>
+                                <h1 class="display-3 fw-bold mb-3 font-style1 text-gold">Fredrik Yobi (Apeth)</h1>
+                                <p class="fs-2">Putra dari Bapak Salmon Yobi & <br> Ibu L.
+                                    Rumaniowi</p>
+                            </div>
+                            <div class="col-6 mx-auto my-5">
+                                <img src="couple/1.jpg" class="w-100 border border-light p-2" alt="">
+                            </div>
+
+                            <div class="fs-1 my-5">
+                                dengan
+                            </div>
+
+                            <div>
+                                <h1 class="display-3 fw-bold mb-3 font-style1 text-gold">Hansina Afaar (Nia)</h1>
+                                <p class="fs-2">Putri dari Bapak Jimmy Hendrik Afaar & <br> Ibu
+                                    Tirsa Afaar</p>
+                            </div>
+                            <div class="col-6 mx-auto my-5">
+                                <img src="couple/2.jpg" class="w-100 border border-light p-2" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+
+    </div>
+    <!-- #bride & groom end -->
+
+    <!-- #gallery start -->
+    <div id="firman" class="container-fluid d-none" style="background-image: url('bg/5.jpg');">
+        <div class="row">
+            <div class="col-lg-10 mx-auto p-5 my-5">
+
+                <!-- divider start -->
+                <img src="divider/3.png" class="my-5" width="400" alt="Divider">
+                <!-- divider end -->
+
+                <p class="col-10 mx-auto h4 mb-5 fs-2">"Demikianlah mereka bukan lagi dua, melainkan satu. karena
+                    itu, apa yang telah dipersatukan Allah tidak boleh diceraikan manusia". <br>(Matius 19:6)</p>
+
+                <div class="row">
+                    <div class="col-6 col-lg-4 mb-4">
+                        <img src="./gallery/1.jpg" alt="Galleri" class="img-thumbnail shadow">
+                    </div>
+                    <div class="col-6 col-lg-4 mb-4">
+                        <img src="./gallery/3.jpg" alt="Galleri" class="img-thumbnail shadow">
+                    </div>
+                    <div class="col-6 col-lg-4 mb-4">
+                        <img src="./gallery/5.jpg" alt="Galleri" class="img-thumbnail shadow">
+                    </div>
+                    <div class="col-6 col-lg-4 mb-4">
+                        <img src="./gallery/4.jpg" alt="Galleri" class="img-thumbnail shadow">
+                    </div>
+                    <div class="col-6 col-lg-4 mb-4">
+                        <img src="./gallery/6.jpg" alt="Galleri" class="img-thumbnail shadow">
+                    </div>
+                    <div class="col-6 col-lg-4 mb-4">
+                        <img src="./gallery/2.jpg" alt="Galleri" class="img-thumbnail shadow">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- #gallery end -->
+
+    <!-- #dompet digital start -->
+    <div id="dompet" class="container-fluid d-none" style="background-image: url('bg/5.jpg');">
+        
+        <div class="row">
+
+            <div class="col-lg-10 mx-auto py-5">
+                <div class="mb-4 font-style animate__animated animate__fadeInLeft animate__slow ">
+                    <h1 class="display-1 fw-bold">Dompet
+                    <span class="h1"></span> Digital</h1>
+                </div>
+
+                <img src="divider/2.png" width="300"  alt="">
+                <!-- divider end -->
+
+                <div class="bg-light col-lg-6 mx-auto col-10 px-5 py-4 rounded shadow my-5 rounded-0 text-dark">
+                    <img src="https://www.pinclipart.com/picdir/big/105-1051729_bank-negara-indonesia-logo-bank-bni-transparan-clipart.png" alt="" srcset="" class="img-fixed mt-5" width="100">
+                    <p class="h1 fw-bold text-uppercase ">BANK BNI</p>
+                    <p class="h3 mt-4 mb-0 fw-bold"></i> No Rek.</p>
+                    <p class="h5 fw-bold">800213703 </p>
+
+                    <p class="h3 mt-4 mb-0 fw-bold"> Atas Nama</p>
+                    <p class="h5 fw-bold">Jeli Arodi Sabuna </p>
+
+                    <div class="d-grid gap-1 col-12 mx-auto mt-5 mb-5">
+                        <button  id="btn-dompet"  class="btn btn-danger btn-lg p-3"> <i class="fa-solid fa-clipboard"></i> SALIN</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- .row end -->
+
+    </div>
+    <!-- #dompet digital end -->
+
+    <!-- #guest book start -->
+    <div id="buku-tamu" class="container-fluid p-5 d-none"
+        style="background-image: url('');background-size: cover;">
+
+        <div class="row">
+
+            <div class="col-lg-10 mx-auto">
+
+                <!-- divider start -->
+                <img src="divider/2.png" class="my-5" width="400" alt="Divider">
+                <!-- divider end -->
+
+                <div class="mb-4">
+                    <h1 class="display-1 fw-bold font-style1 text-gold">Buku Tamu</h1>
+                    <p class="mb-5 col-lg-4 mx-auto my-4 fs-2 ">Ucapan & Doa</p>
+                </div>
+
+                <div class="col-12 mb-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="form-group mb-3">
+                                <select name="" id="kehadiran" class="form-select form-select-lg fs-1 p-5">
+                                    <option class="fs-5" hidden selected>Kehadiran</option>
+                                    <option class="fs-5" value="Hadir">Hadir</option>
+                                    <option class="fs-5" value="Tidak Hadir">Tidak Hadir</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control form-control-lg fs-1 p-5" placeholder="Nama Lengkap">
+                            </div>
+                            <div class="form-group mb-3">
+                                <textarea name="pesan" id="ucapan" cols="30" rows="8" class="form-control form-control-lg fs-1 p-5" placeholder="Ucapan & Doa..."></textarea>
+                            </div>
+                            <button type="submit" onclick="insert_value()" class="btn btn-lg btn-dark text-light w-100 fs-1 py-4 px-5">
+                                <i class="fa-solid fa-paper-plane me-2"></i> Kirim Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- .col end -->
+            </div>
+        </div>
+        <!-- .row end -->
+
+    </div>
+    <!-- #guest book end -->
+
+    <!-- footer start -->
+    <footer class="container-fluid text-muted py-5 border-top bg-dark text-white d-none " id="footer">
+        <div class="container">
+            <p class="mb-1 text-white fs-2">&copy; <span class="fw-bold text-light">www.yaswarau.id</span> by <a
+                    href="https://nokensoft.com" class="fw-bold text-light text-decoration-none"
+                    target="_blank">Nokensoft</a></p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Nama tamu -->
+
+    <!-- Waktu mundur -->
+    <script>
+        $(document).ready(function () {
+            (function (e) {
+                e.fn.countdown = function (t, n) {
+                    function i() {
+                        eventDate = Date.parse(r.date) / 1e3;
+                        currentDate = Math.floor(e.now() / 1e3);
+                        //
+                        if (eventDate <= currentDate) {
+                            n.call(this);
+                            clearInterval(interval)
+                        }
+                        //
+                        seconds = eventDate - currentDate;
+                        days = Math.floor(seconds / 86400);
+                        seconds -= days * 60 * 60 * 24;
+                        hours = Math.floor(seconds / 3600);
+                        seconds -= hours * 60 * 60;
+                        minutes = Math.floor(seconds / 60);
+                        seconds -= minutes * 60;
+                        //
+                        days == 1 ? thisEl.find(".timeRefDays").text("Days") : thisEl.find(".timeRefDays").text("Days");
+                        hours == 1 ? thisEl.find(".timeRefHours").text("Hours") : thisEl.find(".timeRefHours").text("Hours");
+                        minutes == 1 ? thisEl.find(".timeRefMinutes").text("Minutes") : thisEl.find(".timeRefMinutes").text("Minutes");
+                        seconds == 1 ? thisEl.find(".timeRefSeconds").text("Seconds") : thisEl.find(".timeRefSeconds").text("Seconds");
+                        //
+                        if (r["format"] == "on") {
+                            days = String(days).length >= 2 ? days : "0" + days;
+                            hours = String(hours).length >= 2 ? hours : "0" + hours;
+                            minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+                            seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+                        }
+                        //
+                        if (!isNaN(eventDate)) {
+                            thisEl.find(".days").text(days);
+                            thisEl.find(".hours").text(hours);
+                            thisEl.find(".minutes").text(minutes);
+                            thisEl.find(".seconds").text(seconds)
+                        }
+                        else {
+                            errorMessage = "Invalid date. Example: 27 March 2025 17:00:00";
+                            alert(errorMessage);
+                            console.log(errorMessage);
+                            clearInterval(interval)
+                        }
+                    }
+                    //
+                    var thisEl = e(this);
+                    var r = {
+                        date: null,
+                        format: null
+                    };
+                    //
+                    t && e.extend(r, t);
+                    i();
+                    interval = setInterval(i, 1e3)
+                }
+            })(jQuery);
+            //
+            $(document).ready(function () {
+                function e() {
+                    var e = new Date;
+                    e.setDate(e.getDate() + 60);
+                    dd = e.getDate();
+                    mm = e.getMonth() + 1;
+                    y = e.getFullYear();
+                    futureFormattedDate = mm + "/" + dd + "/" + y;
+                    return futureFormattedDate
+                }
+                //2023-02-15
+                $("#countdown").countdown({
+                    date: "6 April 2023 15:00:00", // change date/time here - do not change the format!
+                    format: "on"
+                });
+
+            });
+        });
+    </script>
+
+    <!-- Mengambil nama dari url -->
+    <script>
+        let url = window.location.href;
+        let cut = url.substr(46);
+        if (cut === "") {
+            document.getElementById("nama").innerHTML = `Belum ada nama tamu undangan`;
+        } else {
+            let nama = cut.replace(/-/g, " ");
+            document.getElementById("nama").innerHTML = nama;
+        }
+    </script>
+
+    <!-- Buku Tamu -->
+    <script>
+        var script_url = "https://script.google.com/macros/s/AKfycbwwEh2z2HsUp5EdEyd4kGzAZU5Zs6E5vlGeVCI7esMr2xzJ_mEeYqte_y40qhuJj_MWqw/exec";
+        function insert_value() {
+            let nama = $("#nama_lengkap").val();
+            let ucapan = $("#ucapan").val();
+            let kehadiran = $("#kehadiran").val();
+            if (nama && ucapan && kehadiran) {
+                let url = script_url + "?callback=ctrlq&nama=" + nama + "&ucapan=" + ucapan + "&kehadiran=" + kehadiran + "&action=insert";
+                $("input[type='text']").val("");
+                $("textarea").val("");
+                var request = jQuery.ajax({
+                    crossDomain: true,
+                    url: url,
+                    method: "GET",
+                    dataType: "jsonp"
+                });
+
+
+                Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'success',
+                    text: 'Pesan sudah tersimpan !',
+                    showConfirmButton: true,
+                    timer: 1000
+                });
+            } else {
+                Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'error',
+                    text: 'Semua belum terisi !!',
+                    showConfirmButton: true,
+                    timer: 1000
+                });
+            }
+        }
+    </script>
+
+    <!-- Audio -->
+    <script>
+        var x = document.getElementById("myAudio");
+
+        function playAudio() {
+            let intro = document.getElementById("intro");
+            var lokasi = document.getElementById("lokasi");
+            var bride_groom = document.getElementById("bride-groom");
+            var firman = document.getElementById("firman");
+            var dompet = document.getElementById("dompet");
+            var footer = document.getElementById("footer");
+            var buku_tamu = document.getElementById("buku-tamu");
+
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            let sound_controls = document.getElementById("sound-controls");
+
+            intro.classList.add("d-none");
+            bride_groom.classList.remove("d-none");
+            lokasi.classList.remove("d-none");
+            buku_tamu.classList.remove("d-none");
+            footer.classList.remove("d-none");
+            firman.classList.remove("d-none");
+            dompet.classList.remove("d-none");
+            btn_pause.classList.remove("d-none");
+            btn_play.classList.add("d-none");
+            sound_controls.classList.remove("d-none");
+            x.play();
+        }
+
+        function playButton() {
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            btn_pause.classList.remove("d-none");
+            btn_play.classList.add("d-none");
+            x.play();
+        }
+
+        function pauseButton() {
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            btn_pause.classList.add("d-none");
+            btn_play.classList.remove("d-none");
+            x.pause();
+        }
+    </script>
+
+</body>
+
+</html>
