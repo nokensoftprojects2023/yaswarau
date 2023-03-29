@@ -1,0 +1,106 @@
+html,
+body {
+    font-family: 'Prata';
+    padding: 0;
+    margin: 0;
+    background-color: #0b1826;
+    color: antiquewhite;
+}
+
+.font-style1 {
+    font-family: 'Prata', cursive;
+}
+
+.goyang-4 img {
+    animation-name: goyang4;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* music controls */
+
+.play-btn {
+    display: block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    z-index: 9999;
+    right: 5px;
+    top: 5px;
+
+}
+
+.pause-btn {
+    display: block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    z-index: 9999;
+    right: 5px;
+    top: 5px;
+}
+
+.text-gold {
+    /* position: absolute; */
+    /* transform: translate(-50%,-50%); */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* letter-spacing: 5px; */
+    /* font-size: 150px; */
+    font-weight: bold;
+    background-image: linear-gradient(to right,
+            #462523 0,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #462523 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+.bg-gold {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom, 
+        #462523 0,
+        #cb9b51 22%,
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%),
+        radial-gradient(
+            ellipse farthest-corner at left top, 
+            #462523 0,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #462523 100%);
+}
+
+.text-dark {
+    color: #0b1826;
+}
