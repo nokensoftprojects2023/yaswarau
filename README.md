@@ -57,3 +57,16 @@ https://yaswarau.id/angky-jeli/tamu.html
 
 Buku Tamu 
 https://docs.google.com/spreadsheets/d/1LxJNqEJ_Yx_7DmAl3q9vER-E0gon3pP39x0Hy0SETTY/edit?usp=sharing
+
+
+## Apry Jitmau
+
+Undangan
+https://yaswarau.id/apry-jitmau/index.html?nama=Samuel-Bosawer
+
+Kirim Undangan
+https://yaswarau.id/apry-jitmau/tamu.html
+
+Buku Tamu
+https://docs.google.com/spreadsheets/d/1aq43ixdBwyQjsm2Po6V31BduHvsldLinUCBxtJ7fPp0/edit?usp=sharing
+
