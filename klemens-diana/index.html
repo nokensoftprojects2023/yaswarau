@@ -66,21 +66,29 @@
             margin-top: 10px;
         }
 
-        /* Media query untuk tampilan mobile */
-        @media (max-width: 768px) {
-            /* Sembunyikan widget terjemahan pada perangkat seluler */
+        /* Tampilan desktop */
+        @media (min-width: 768px) {
             #google_translate_element {
-                display: none;
-            }
-            
-            /* Tampilkan teks terjemahan sebagai gantinya */
-            .goog-te-banner-text {
-                display: block;
-                font-size: 14px; /* Atur ukuran font yang sesuai untuk perangkat seluler */
-                color: #333; /* Atur warna teks yang sesuai */
-                margin-top: 5px; /* Jarak atas dari navbar pada perangkat seluler */
+                /* Tambahkan gaya khusus untuk tampilan desktop */
             }
         }
+
+        /* Tampilan mobile */
+        @media (max-width: 767px) {
+            #google_translate_element {
+                /* Tambahkan gaya khusus untuk tampilan mobile */
+            }
+        }
+
+        #google_translate_element {
+            background-color: #f5f5f5; /* Ganti warna latar belakang sesuai keinginan */
+            border: 1px solid #ccc; /* Tambahkan border jika perlu */
+            padding: 10px;
+            border-radius: 5px; /* Tambahkan sudut melengkung jika perlu */
+            font-family: 'Arial', sans-serif; /* Ganti font jika perlu */
+        }
+
+
 
         
 
@@ -109,8 +117,8 @@
         
        
         <div id="google_translate_element"></div>
-   
-        <!-- end of header -->
+
+
         <!-- start of hero -->
         <section class="wpo-hero-slider wpo-hero-style-3">
             <div class="wedding-announcement">
@@ -319,12 +327,12 @@
                                                 </div>
                                             </div>
                                             <ul class="styled-list">
-                                                <li>1. Kel. Drs. I Made Budi, M.Si</li>
-                                                <li>2. Kel. Gustaf R. Kawer, S.H., M.Si</li>
-                                                <li>3. Kel. Hanok R. Mallo, S.E</li>
-                                                <li>4. Kel. Bodewyn Robert Deda</li>
-                                                <li>5. Kel. Markus Deda</li>
-                                                <li>6. Kel. Esau Tampoto</li>
+                                                <li>1. Drs. I Made Budi, M.Si</li>
+                                                <li>2. Gustaf R. Kawer, S.H., M.Si</li>
+                                                <li>3. Hanok R. Mallo, S.E</li>
+                                                <li>4. Bodewyn Robert Deda</li>
+                                                <li>5. Markus Deda</li>
+                                                <li>6. Esau Tampoto</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -342,12 +350,12 @@
                                                 </div>
                                             </div>
                                             <ul class="styled-list">
-                                                <li>1. Kel. Elyas Wenda,  SE., M.Si</li>
-                                                <li>2. Kel. Ir.  Stanley J.J.H Waita, MT</li>
-                                                <li>3. Kel. Iwan Y.  Ayomi,  ST., M.Eng</li>
-                                                <li>4. Kel. Ev. Dave Doyapo, SH., MA.Bs</li>
-                                                <li>5. Kel. Alm. Geradus Ferdinandus</li>
-                                                <li>6. Kel. Iptu A. Pieter N. Werbabkay</li>
+                                                <li>1. Elyas Wenda,  SE., M.Si</li>
+                                                <li>2. Ir.  Stanley J.J.H Waita, MT</li>
+                                                <li>3. Iwan Y.  Ayomi,  ST., M.Eng</li>
+                                                <li>4. Ev. Dave Doyapo, SH., MA.Bs</li>
+                                                <li>5. Alm. Geradus Ferdinandus</li>
+                                                <li>6. Iptu A. Pieter N. Werbabkay</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -577,6 +585,13 @@
                 'google_translate_element'
             );
         }
+    </script>
+
+    <script>
+        document.getElementById('translate-button').addEventListener('click', function() {
+            var translateElement = document.getElementById('google_translate_element');
+            translateElement.style.display = (translateElement.style.display === 'none' || !translateElement.style.display) ? 'block' : 'none';
+        });
     </script>
 
     
