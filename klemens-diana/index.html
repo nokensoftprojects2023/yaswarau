@@ -88,6 +88,27 @@
             font-family: 'Arial', sans-serif; /* Ganti font jika perlu */
         }
 
+        /* CSS untuk tampilan audio */
+        .audio-container {
+            position: relative;
+            max-width: 300px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        /* CSS untuk ikon play */
+        .play-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
 
 
         
@@ -121,6 +142,12 @@
 
         <!-- start of hero -->
         <section class="wpo-hero-slider wpo-hero-style-3">
+            <div class="audio-container">
+                <audio id="musik" autoplay controls>
+                    <source src="assets/music/Marry Your Daughter - Brian McKnight Jr. [Official Music Video].mp3" type="audio/mpeg">
+                </audio>
+                <div class="play-icon" id="play-button">&#9654;</div>
+            </div>
             <div class="wedding-announcement">
                 <div class="couple-text">
                     <h2 class="wow slideInUp" data-wow-duration="1s">Klemens & Diana</h2>
@@ -327,12 +354,12 @@
                                                 </div>
                                             </div>
                                             <ul class="styled-list">
-                                                <li>1. Drs. I Made Budi, M.Si</li>
-                                                <li>2. Gustaf R. Kawer, S.H., M.Si</li>
-                                                <li>3. Hanok R. Mallo, S.E</li>
-                                                <li>4. Bodewyn Robert Deda</li>
-                                                <li>5. Markus Deda</li>
-                                                <li>6. Esau Tampoto</li>
+                                                <li>1. Kel. Drs. I Made Budi, M.Si</li>
+                                                <li>2. Kel. Gustaf R. Kawer, S.H., M.Si</li>
+                                                <li>3. Kel. Hanok R. Mallo, S.E</li>
+                                                <li>4. Kel. Bodewyn Robert Deda</li>
+                                                <li>5. Kel. Markus Deda</li>
+                                                <li>6. Kel. Esau Tampoto</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -350,12 +377,12 @@
                                                 </div>
                                             </div>
                                             <ul class="styled-list">
-                                                <li>1. Elyas Wenda,  SE., M.Si</li>
-                                                <li>2. Ir.  Stanley J.J.H Waita, MT</li>
-                                                <li>3. Iwan Y.  Ayomi,  ST., M.Eng</li>
-                                                <li>4. Ev. Dave Doyapo, SH., MA.Bs</li>
-                                                <li>5. Alm. Geradus Ferdinandus</li>
-                                                <li>6. Iptu A. Pieter N. Werbabkay</li>
+                                                <li>1. Kel. Elyas Wenda,  SE., M.Si</li>
+                                                <li>2. Kel. Ir.  Stanley J.J.H Waita, MT</li>
+                                                <li>3. Kel. Iwan Y.  Ayomi,  ST., M.Eng</li>
+                                                <li>4. Kel. Ev. Dave Doyapo, SH., MA.Bs</li>
+                                                <li>5. Kel. Alm. Geradus Ferdinandus</li>
+                                                <li>6. Kel. Iptu A. Pieter N. Werbabkay</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -398,68 +425,7 @@
         </div>
 
         <!-- end wpo-cta-section -->
-        <br>
-
-         <!-- start of wpo-contact-section -->
-         <section class="wpo-contact-section section-padding" id="RSVP">
-            <div class="container">
-                <div class="wpo-contact-section-wrapper">
-                    <div class="wpo-contact-form-area">
-                        <div class="wpo-section-title">
-                            <div class="section-title-icon">
-                                <i class="fi flaticon-dove"></i>
-                            </div>
-                            <h2>Buku Tamu</h2>
-                            <p>Ucapan & Doa</p>
-                        </div>
-                        <form method="post" class="contact-validation-active" id="contact-form-main">
-                    
-
-                            <div>
-                                <select name="guest" class="form-control">
-                                    <option disabled="disabled" selected>Kehadiran</option>
-                                    <option>Hadir</option>
-                                    <option>Tidak Hadir</option>
-                                </select>
-                            </div>
-                            <div>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Nama Lengkap">
-                            </div>
-                            <div>
-                                <input type="text-area" class="form-control" name="Ucapandoa" id="Ucapandoa"
-                                    placeholder="Ucapan & Doa">
-                            </div>
-                            
-                            <div class="submit-area">
-                                <button type="submit" class="theme-btn-s3">Kirim</button>
-                                <div id="c-loader">
-                                    <i class="ti-reload"></i>
-                                </div>
-                            </div>
-                            <div class="clearfix error-handling-messages">
-                                <div id="success">Thank you</div>
-                                <div id="error"> Error occurred while sending email. Please try again later.
-                                </div>
-                            </div>
-                        </form>
-                        <div class="border-style"></div>
-                    </div>
-                    <div class="vector-1">
-                        <img src="assets/images/rsvp/flower1.png" alt="">
-                    </div>
-                    <div class="vector-2">
-                        <img src="assets/images/rsvp/flower2.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="shape-1">
-                <img src="assets/images/rsvp/shape1.png" alt="">
-            </div>
-            <div class="shape-2">
-                <img src="assets/images/rsvp/shape2.png" alt="">
-            </div>
-        </section>
-        <!-- end of wpo-contact-section -->
+        
 
 
         <!-- start of wpo-site-footer-section -->
@@ -469,8 +435,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-xs-12">
-                            <p class="copyright"> &copy; 2023 <a
-                                    href="https://www.yaswarau.id/">Yaswar Au</a> by NokenSoft</p>
+                            <p class="copyright"> Powered by <a href="https://www.yaswarau.id/">NokenSoft <sup>PT. Noken Inovasi Teknologi Informasi</sup></a></p>
                         </div>
                     </div>
                 </div>
@@ -594,32 +559,65 @@
         });
     </script>
 
-    
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("musik");
+        var playButton = document.getElementById("play-button");
 
-    <audio id="musik" controls>
-        <source src="assets/music/Marry Your Daughter - Brian McKnight Jr. [Official Music Video].mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          var audio = document.getElementById("musik");
-      
-          // Menguji apakah audio dapat diputar (support audio).
-          if (audio && typeof audio.play === "function") {
+        // Fungsi untuk memainkan atau menghentikan audio
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                playButton.textContent = "||"; // Mengganti ikon menjadi pause
+            } else {
+                audio.pause();
+                playButton.textContent = "&#9654;"; // Mengganti ikon menjadi play
+            }
+        }
+
+        // Menguji apakah audio dapat diputar (support audio).
+        if (audio && typeof audio.play === "function") {
             // Mulai pemutaran audio secara otomatis.
             audio.play()
-              .then(function() {
+                .then(function() {
+                    // Pemutaran berhasil.
+                    console.log("Musik dimulai secara otomatis.");
+                    playButton.textContent = "||"; // Mengganti ikon menjadi pause saat otomatis dimainkan
+                })
+                .catch(function(error) {
+                    // Pemutaran gagal.
+                    console.error("Gagal memulai musik:", error);
+                });
+        }
+
+        // Tambahkan event listener untuk mengklik ikon play/pause
+        playButton.addEventListener("click", toggleAudio);
+    });
+</script>
+
+    
+
+
+      
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("musik");
+        
+            // Menguji apakah audio dapat diputar (support audio).
+            if (audio && typeof audio.play === "function") {
+            // Mulai pemutaran audio secara otomatis.
+            audio.play()
+                .then(function() {
                 // Pemutaran berhasil.
                 console.log("Musik dimulai secara otomatis.");
-              })
-              .catch(function(error) {
+                })
+                .catch(function(error) {
                 // Pemutaran gagal.
                 console.error("Gagal memulai musik:", error);
-              });
-          }
+                });
+            }
         });
-      </script>
+    </script>
       
       
     
