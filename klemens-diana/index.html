@@ -51,9 +51,9 @@
         }
 
         .heart {
-            color: red; /* Warna hiasan hati */
-            font-size: 36px; /* Ukuran hati */
-            margin: 0 5px; /* Jarak antara hati dan teks */
+            color: red; 
+            font-size: 36px; 
+            margin: 0 5px; 
         }
 
         .clock-text {
@@ -81,11 +81,11 @@
         }
 
         #google_translate_element {
-            background-color: #f5f5f5; /* Ganti warna latar belakang sesuai keinginan */
-            border: 1px solid #ccc; /* Tambahkan border jika perlu */
+            background-color: #f5f5f5; 
+            border: 1px solid #ccc; 
             padding: 10px;
-            border-radius: 5px; /* Tambahkan sudut melengkung jika perlu */
-            font-family: 'Arial', sans-serif; /* Ganti font jika perlu */
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif; 
         }
 
         /* CSS untuk tampilan audio */
@@ -104,16 +104,57 @@
             top: 0;
             right: 0;
             background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+            color: rgb(236, 0, 0);
             padding: 5px;
             cursor: pointer;
         }
 
+        .wedding-theme-clock {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff; /* Warna teks */
+        }
 
+        #countdown {
+            text-align: center;
+            font-size: 24px;
+        }
+        #countdown div {
+            display: inline-block;
+            margin: 0 20px;
+        }
 
-        
+        #days,
+        #hours,
+        #minutes,
+        #seconds {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: #D66371; 
+        color: white;
+        text-align: center;
+        line-height: 100px; 
+        font-size: 22px; 
+        display: inline-block;
+        margin: 10px; 
+        margin-bottom: 10px;
+        }
+
+        /* Mengatur margin untuk layar seluler (lebar kurang dari 768px) */
+        @media (max-width: 768px) {
+        #days,
+        #hours,
+        #minutes,
+        #seconds {
+            margin: 5px; /* Ubah margin sesuai keinginan Anda */
+        }
+        }
+
 
     </style>
+    
 </head>
 
 <body class="box-bg">
@@ -150,26 +191,23 @@
             </div>
             <div class="wedding-announcement">
                 <div class="couple-text">
+                    <h3 class="wow slideInUp display-5 text-light" data-wow-duration="1.8s">Undangan Pernikahan</h3>
                     <h2 class="wow slideInUp" data-wow-duration="1s">Klemens & Diana</h2>
-                    <p class="wow slideInUp" data-wow-duration="1.8s">We Are Getting Married Sep 16, 2023</p>
                     <!-- start wpo-wedding-date -->
+                   
                     <div class="wpo-wedding-date wow slideInUp" data-wow-duration="2.1s">
                         <div class="clock-grids">
-                            <div id="clock">
-                                <!-- Tambahkan elemen hiasan di sini -->
-                                <div class="wedding-theme-clock">
-                                    <span class="heart"></span> <!-- Bentuk hati atau hiasan lainnya -->
-                                    <div class="clock-text">
-                                        <span class="days">00</span> Hari
-                                        <span class="hours">00</span> Jam
-                                        <span class="minutes">00</span> Menit
-                                        <span class="seconds">00</span> Detik
-                                    </div>
-                                    <span class="heart"></span> <!-- Bentuk hati atau hiasan lainnya -->
-                                </div>
-                            </div>
+                            <h4 class="clock-text text-light" id="date">
+                                <div id="countdown">
+                                    
+                                    <div id="days">0 Days</div>
+                                    <div id="hours">0 Hours</div>
+                                    <div id="minutes">0 Minutes</div>
+                                    <div id="seconds">0 Seconds</div>
+                                  </div>
+                            </h4>
                         </div>
-                    </div>                    
+                    </div> 
                     <!-- end wpo-wedding-date -->
                 </div>
             </div>
@@ -457,85 +495,7 @@
     <script src="assets/js/jquery-plugin-collection.js"></script>
     <!-- Custom script for this template -->
     <script src="assets/js/script.js"></script>
-
-    <!-- <script>
-        // Tanggal dan waktu akhir yang Anda inginkan (dalam format Tahun-Bulan-Hari Jam:Menit:Detik)
-        var countDownDate = new Date("2023-09-16 08:10:00").getTime();
-        
-        // Fungsi yang akan diperbarui setiap detik
-        var x = setInterval(function() {
-            // Dapatkan tanggal dan waktu saat ini
-            var now = new Date().getTime();
-        
-            // Hitung selisih waktu antara tanggal dan waktu saat ini dengan tanggal akhir
-            var distance = countDownDate - now;
-        
-            // Hitung hari, jam, menit, dan detik
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-            // Tampilkan waktu pada elemen dengan ID "clock"
-            document.getElementById("clock").innerHTML = days + " : " + hours + " : "
-            + minutes + " : " + seconds;
-        
-            // Jika waktu hitung mundur berakhir, tampilkan pesan
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("clock").innerHTML = "Waktu telah habis!";
-            }
-        }, 1000); // Perbarui setiap 1 detik
-    </script>
-
-    <script>
-        // Ambil elemen waktu
-        var clockElement = document.getElementById("clock");
-
-        // Tambahkan elemen-elemen hiasan
-        var weddingThemeClock = document.createElement("div");
-        weddingThemeClock.className = "wedding-theme-clock";
-        weddingThemeClock.innerHTML = `
-            <span class="heart"></span>
-            <div class="clock-text">
-                <span class="days">00</span> Hari
-                <span class="hours">00</span> Jam
-                <span class="minutes">00</span> Menit
-                <span class="seconds">00</span> Detik
-            </div>
-            <span class="heart"></span>
-        `;
-
-        // Ganti elemen waktu dengan elemen yang sudah dimodifikasi
-        clockElement.innerHTML = "";
-        clockElement.appendChild(weddingThemeClock);
-
-        // Tambahkan gaya CSS
-        var styleElement = document.createElement("style");
-        styleElement.innerHTML = `
-            .wedding-theme-clock {
-                text-align: center;
-                font-size: 24px;
-                font-weight: bold;
-                color: #fff;
-            }
-
-            .heart {
-                color: red;
-                font-size: 36px;
-                margin: 0 5px;
-            }
-
-            .clock-text {
-                display: inline-block;
-                margin: 0 10px;
-            }
-        `;
-
-        // Tambahkan elemen gaya CSS ke dalam <head> dokumen
-        document.head.appendChild(styleElement);
-
-    </script> -->
+    <script src="assets/js/date.js"></script>
 
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -559,65 +519,54 @@
         });
     </script>
 
+
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var audio = document.getElementById("musik");
-        var playButton = document.getElementById("play-button");
-
-        // Fungsi untuk memainkan atau menghentikan audio
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-                playButton.textContent = "||"; // Mengganti ikon menjadi pause
-            } else {
-                audio.pause();
-                playButton.textContent = "&#9654;"; // Mengganti ikon menjadi play
-            }
-        }
-
-        // Menguji apakah audio dapat diputar (support audio).
-        if (audio && typeof audio.play === "function") {
-            // Mulai pemutaran audio secara otomatis.
-            audio.play()
-                .then(function() {
-                    // Pemutaran berhasil.
-                    console.log("Musik dimulai secara otomatis.");
-                    playButton.textContent = "||"; // Mengganti ikon menjadi pause saat otomatis dimainkan
-                })
-                .catch(function(error) {
-                    // Pemutaran gagal.
-                    console.error("Gagal memulai musik:", error);
-                });
-        }
-
-        // Tambahkan event listener untuk mengklik ikon play/pause
-        playButton.addEventListener("click", toggleAudio);
+    $("#play-btn").click(function(){
+        let btn_pause = document.getElementById("pause-btn");
+        let btn_play = document.getElementById("play-btn");
+        btn_pause.classList.remove("d-none");
+        btn_play.classList.add("d-none");
+        var audio = document.getElementById("audio");
+        audio.play();
     });
+    $("#pause-btn").click(function(){
+        let btn_play = document.getElementById("play-btn");
+        let btn_pause = document.getElementById("pause-btn");
+        btn_play.classList.remove("d-none");
+        btn_pause.classList.add("d-none");
+        var audio = document.getElementById("audio");
+        audio.pause();
+    });
+
+    $("#btn-buka").click(function(){
+        let btn_pause = document.getElementById("pause-btn");
+        let nav = document.getElementById("navbar");
+        let isi = document.getElementById("isi");
+        var cover = document.getElementById("cover-depan");
+        cover.classList.add("d-none");
+        nav.classList.remove("d-none");
+        isi.classList.remove("d-none");
+        btn_pause.classList.remove("d-none");
+        var audio = document.getElementById("audio");
+        audio.play();
+    });
+
+    const copyBtn = document.getElementById('copyBtn')
+    const copyText = document.getElementById('copyText')
+
+    copyBtn.onclick = () => {
+        copyText.select();    // Selects the text inside the input
+        document.execCommand('copy');    // Simply copies the selected text to clipboard 
+        Swal.fire({         //displays a pop up with sweetalert
+            icon: 'success',
+            text: 'No Rekening Tercopy',
+            showConfirmButton: false,
+            timer: 1000
+        });
+    }
 </script>
 
-    
 
-
-      
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var audio = document.getElementById("musik");
-        
-            // Menguji apakah audio dapat diputar (support audio).
-            if (audio && typeof audio.play === "function") {
-            // Mulai pemutaran audio secara otomatis.
-            audio.play()
-                .then(function() {
-                // Pemutaran berhasil.
-                console.log("Musik dimulai secara otomatis.");
-                })
-                .catch(function(error) {
-                // Pemutaran gagal.
-                console.error("Gagal memulai musik:", error);
-                });
-            }
-        });
-    </script>
       
       
     
