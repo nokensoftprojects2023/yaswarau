@@ -66,20 +66,7 @@
             margin-top: 10px;
         }
 
-        /* Tampilan desktop */
-        @media (min-width: 768px) {
-            #google_translate_element {
-                /* Tambahkan gaya khusus untuk tampilan desktop */
-            }
-        }
-
-        /* Tampilan mobile */
-        @media (max-width: 767px) {
-            #google_translate_element {
-                /* Tambahkan gaya khusus untuk tampilan mobile */
-            }
-        }
-
+  
         #google_translate_element {
             background-color: #f5f5f5; 
             border: 1px solid #ccc; 
@@ -152,6 +139,30 @@
         }
         }
 
+        /* dropdown translate bahasa */
+           /* Kustomisasi tampilan dropdown */
+           .language-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-dropdown select {
+            padding: 5px;
+            border: 1px solid #cb0087;
+            border-radius: 5px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: transparent;
+        }
+
+        .language-dropdown::after {
+            content: "\25BC";
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
 
     </style>
     
@@ -178,7 +189,24 @@
     
         
        
-        <div id="google_translate_element"></div>
+        <div id="google_translate_element" style="display: none;"></div>
+        
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h2>Pilih Bahasa</h2>
+                    <div class="language-dropdown">
+                        <select class="form-select" id="language-select">
+                            <option value="en">Bahasa Inggris</option>
+                            <option value="id">Bahasa Indonesia</option>
+                            <!-- Tambahkan opsi bahasa lain jika diperlukan -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
 
 
         <!-- start of hero -->
@@ -219,23 +247,11 @@
                         </div> <!-- end slide-inner --> 
                     </div> <!-- end swiper-slide -->
 
-                    <div class="swiper-slide">
-                        <div class="slide-inner slide-bg-image" data-background="assets/images/WALPAPER.jpeg">
-                        </div> <!-- end slide-inner --> 
-                    </div> <!-- end swiper-slide -->
-
                 </div>
                 <!-- end swiper-wrapper -->
-
-                <!-- swipper controls -->
-                <div class="swiper-pagination"></div>
-                <div class="next-prev-btn">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
         </section>
         <!-- end of hero slider -->
+
         <!-- start couple-section -->
         <section class="couple-section section-padding" id="couple">
             <div class="container">
@@ -497,18 +513,25 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/date.js"></script>
 
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement(
                 {
-                    pageLanguage: 'id',
-                    includedLanguages: 'en,id', // Hanya Bahasa Inggris dan Bahasa Indonesia
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE // Layout widget sederhana
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,id', 
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
                 },
                 'google_translate_element'
             );
+
+            // Fungsi untuk mengubah bahasa Google Translate berdasarkan dropdown
+            document.getElementById('language-select').addEventListener('change', function () {
+                var selectedLang = this.value;
+                var googleTranslateElement = document.getElementById('google_translate_element');
+                googleTranslateElement.setAttribute('lang', selectedLang);
+            });
         }
     </script>
 
@@ -520,51 +543,51 @@
     </script>
 
 
-<script>
-    $("#play-btn").click(function(){
-        let btn_pause = document.getElementById("pause-btn");
-        let btn_play = document.getElementById("play-btn");
-        btn_pause.classList.remove("d-none");
-        btn_play.classList.add("d-none");
-        var audio = document.getElementById("audio");
-        audio.play();
-    });
-    $("#pause-btn").click(function(){
-        let btn_play = document.getElementById("play-btn");
-        let btn_pause = document.getElementById("pause-btn");
-        btn_play.classList.remove("d-none");
-        btn_pause.classList.add("d-none");
-        var audio = document.getElementById("audio");
-        audio.pause();
-    });
-
-    $("#btn-buka").click(function(){
-        let btn_pause = document.getElementById("pause-btn");
-        let nav = document.getElementById("navbar");
-        let isi = document.getElementById("isi");
-        var cover = document.getElementById("cover-depan");
-        cover.classList.add("d-none");
-        nav.classList.remove("d-none");
-        isi.classList.remove("d-none");
-        btn_pause.classList.remove("d-none");
-        var audio = document.getElementById("audio");
-        audio.play();
-    });
-
-    const copyBtn = document.getElementById('copyBtn')
-    const copyText = document.getElementById('copyText')
-
-    copyBtn.onclick = () => {
-        copyText.select();    // Selects the text inside the input
-        document.execCommand('copy');    // Simply copies the selected text to clipboard 
-        Swal.fire({         //displays a pop up with sweetalert
-            icon: 'success',
-            text: 'No Rekening Tercopy',
-            showConfirmButton: false,
-            timer: 1000
+    <script>
+        $("#play-btn").click(function(){
+            let btn_pause = document.getElementById("pause-btn");
+            let btn_play = document.getElementById("play-btn");
+            btn_pause.classList.remove("d-none");
+            btn_play.classList.add("d-none");
+            var audio = document.getElementById("audio");
+            audio.play();
         });
-    }
-</script>
+        $("#pause-btn").click(function(){
+            let btn_play = document.getElementById("play-btn");
+            let btn_pause = document.getElementById("pause-btn");
+            btn_play.classList.remove("d-none");
+            btn_pause.classList.add("d-none");
+            var audio = document.getElementById("audio");
+            audio.pause();
+        });
+
+        $("#btn-buka").click(function(){
+            let btn_pause = document.getElementById("pause-btn");
+            let nav = document.getElementById("navbar");
+            let isi = document.getElementById("isi");
+            var cover = document.getElementById("cover-depan");
+            cover.classList.add("d-none");
+            nav.classList.remove("d-none");
+            isi.classList.remove("d-none");
+            btn_pause.classList.remove("d-none");
+            var audio = document.getElementById("audio");
+            audio.play();
+        });
+
+        const copyBtn = document.getElementById('copyBtn')
+        const copyText = document.getElementById('copyText')
+
+        copyBtn.onclick = () => {
+            copyText.select();    // Selects the text inside the input
+            document.execCommand('copy');    // Simply copies the selected text to clipboard 
+            Swal.fire({         //displays a pop up with sweetalert
+                icon: 'success',
+                text: 'No Rekening Tercopy',
+                showConfirmButton: false,
+                timer: 1000
+            });
+        }
+    </script>
 
 
       
