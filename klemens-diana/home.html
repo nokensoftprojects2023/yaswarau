@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yaswar Au">
+
+    
+    <meta property="og:type" content="Yaswarau" />
+    <meta property="og:title" content="Klemens & Diana " />
+    <meta property="og:description" content="Wedding Invitation" />
+    <meta property="og:url" content="https://yaswarau.id/klemens-diana" />
+    <meta property="og:site_name" content="Yaswarau" />
+    <meta property="og:image" content="https://yaswarau.id/klemens-diana/assets/images/meta.png />
+
+
+    <link href="../images/favicon-yaswarau.png" rel="shortcut icon" type="image/png">
+
+    <title> Yaswar Au - Undangan Nikah</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/sass/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/hide.google.element.css"> -->
+
+    <style>
+        /* Gaya untuk menghapus titik dari daftar */
+        .styled-list {
+          list-style-type: none;
+          padding-left: 0;
+        }
+
+        .wedding-theme-clock {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff; /* Warna teks */
+        }
+
+        .heart {
+            color: red; 
+            font-size: 36px; 
+            margin: 0 5px; 
+        }
+
+        .clock-text {
+            display: inline-block;
+            margin: 0 10px; /* Jarak antara teks dan hati */
+        }
+
+      
+
+        /* CSS untuk tampilan audio */
+        .audio-container {
+            position: relative;
+            max-width: 300px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        /* CSS untuk ikon play */
+        .play-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgb(236, 0, 0);
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .wedding-theme-clock {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff; /* Warna teks */
+        }
+
+        #countdown {
+            text-align: center;
+            font-size: 24px;
+        }
+        #countdown div {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        #days,
+        #hours,
+        #minutes,
+        #seconds {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: #D66371; 
+        color: white;
+        text-align: center;
+        line-height: 100px; 
+        font-size: 22px; 
+        display: inline-block;
+        margin: 10px; 
+        margin-bottom: 10px;
+        }
+
+        /* Mengatur margin untuk layar seluler (lebar kurang dari 768px) */
+        @media (max-width: 768px) {
+        #days,
+        #hours,
+        #minutes,
+        #seconds {
+            margin: 5px; /* Ubah margin sesuai keinginan Anda */
+        }
+        }
+
+        /* music controls */
+        .play-btn {
+            display: block;
+            width: 20px;
+            height: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            text-decoration: none;
+            transition: ease all 0.3s;
+            position: fixed;
+            z-index: 9999;
+            right: 20px;
+            top: 100px;
+        }
+
+        .pause-btn {
+            display: block;
+            width: 20px;
+            height: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            text-decoration: none;
+            transition: ease all 0.3s;
+            position: fixed;
+            z-index: 9999;
+            right: 20px;
+            top: 100px;
+        }
+
+    </style>
+    
+</head>
+
+<body class="box-bg">
+        <!-- button play & pause -->
+        <div id="sound-controls">
+            <a href="#pause" class="pause-btn d-none" onclick="pauseButton()" id="pause-btn">
+                <img src="assets/music/pause.png" alt=""   srcset="" width="40">
+            </a>
+            <a href="#play" onclick="playButton()" class="play-btn d-none" id="play-btn">
+                <img src="assets/music/play-button.png" width="40" alt="">
+            </a>
+        </div>
+    <audio id="myAudio" autoplay>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    <!-- start page-wrapper -->
+    <div class="page-wrapper box-style">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="vertical-centered-box">
+                <div class="content">
+                    <div class="loader-circle"></div>
+                    <img src="assets/images/preloader.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+    
+        
+       
+       
+        
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h2 class="mt-3">Pilih Bahasa</h2>
+                        <div class="rounded" id="google_translate_element"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <br>
+
+
+        <!-- start of hero -->
+        <section class="wpo-hero-slider wpo-hero-style-3">
+            <div class="wedding-announcement">
+                <div class="couple-text">
+                    <h3 class="wow slideInUp display-5 text-light" data-wow-duration="1.8s">Undangan Pernikahan</h3>
+                    <h2 class="wow slideInUp" data-wow-duration="1s">Klemens & Diana</h2>
+                    <!-- start wpo-wedding-date -->
+                   
+                    <div class="wpo-wedding-date wow slideInUp" data-wow-duration="2.1s">
+                        <div class="clock-grids">
+                            <h4 class="clock-text text-light" id="date">
+                                <div id="countdown">
+                                    
+                                    <div id="days">0 Days</div>
+                                    <div id="hours">0 Hours</div>
+                                    <div id="minutes">0 Minutes</div>
+                                    <div id="seconds">0 Seconds</div>
+                                  </div>
+                            </h4>
+                        </div>
+                    </div> 
+                    <!-- end wpo-wedding-date -->
+                </div>
+            </div>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-inner slide-bg-image" data-background="assets/images/WALPAPER.jpeg">
+                        </div> <!-- end slide-inner --> 
+                    </div> <!-- end swiper-slide -->
+
+                </div>
+                <!-- end swiper-wrapper -->
+        </section>
+        <!-- end of hero slider -->
+
+        <!-- start couple-section -->
+        <section class="couple-section section-padding" id="couple">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col col-lg-11">
+                        <div class="couple-area clearfix">
+                            <div class="couple-item bride">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4">
+                                        <div class="couple-img">
+                                            <img src="assets/images/couple/2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="couple-text">
+                                            <h4>Klemens R. Membilong., S.Pd</h4>
+                                            <p>Putra dari Bapak Elimelek Membilong <br>
+                                            dan Ibu Katerina Deda</p>
+                                            <div class="social">
+                                                <ul>
+                                                    <!-- <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="ti-instagram"></i></a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="couple-item groom">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7 order-lg-1 order-2">
+                                        <div class="couple-text">
+                                            <h4>Diana Y. Werkbabkay. ST</h4>
+                                            <p>Putri dari Bapak Wellem Werbabkay <br>
+                                            dan Ibu Alwina Sokoy</p>
+                                            <div class="social">
+                                                <ul>
+                                                    <!-- <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="ti-instagram"></i></a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 order-lg-2 order-1">
+                                        <div class="couple-img">
+                                            <img src="assets/images/couple/1.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+            <div class="shape-1">
+                <img src="assets/images/couple/shape-1.png" alt="">
+            </div>
+            <div class="shape-2">
+                <img src="assets/images/couple/shape-2.png" alt="">
+            </div>
+        </section>
+        <!-- end couple-section -->
+
+        <!-- start wpo-event-section -->
+        <section class="wpo-event-section section-padding" id="event">
+            <div class="container">
+                <div class="row">
+                    <div class="wpo-section-title-s2">
+                        <div class="section-title-icon">
+                            <i class="fi flaticon-dove"></i>
+                        </div>
+                        <h3 class="text-light">Suatu Kebanggaan bagi kami apabila Bapak/Ibu/Saudara/i dapat hadir dan memberikan doa restu <br> dalam acara
+                            pernikahan yang diselenggarakan pada :
+                        </h3 class="text-light">
+                    </div>
+                </div>
+                <div class="wpo-event-wrap">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-12">
+                            <div class="wpo-event-item">
+                                <div class="wpo-event-text">
+                                    <h2>Pemberkatan</h2>
+                                    <ul>
+                                        <li><i class="fi flaticon-calendar text-dark"></i>Sabtu, 16 September 2023 <br>
+                                            08.30 W.I.T – Selesai</li>
+                                        <li>GBI Pondok Kemuliaan Sentani</li>
+                                        <li>Jln. Hawai Sentani, Sentani Kota, Kec. Sentani, <br>Kabupaten Jayapura</li>
+
+                                        <li> <a class="popup-gmaps"
+                                                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.815771396685!2d140.52586857377645!3d-2.5666444383634612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13. 1!3m3!1m2!1s0x686cf1e951e2b623%3A0xf5736c592a519b1f!2sGBI%20Pondok%20Kemuliaan%20Sentani!5e0!3m2!1sen!2sid!4v1692331439242!5m2!1sen!2sid">
+                                                Lihat Lokasi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-6 col-md-6 col-12">
+                            <div class="wpo-event-item">
+                                <div class="wpo-event-text">
+                                    <h2>Resepsi</h2>
+                                    <ul>
+                                        <li>Sabtu, 16 September 2023 <br>
+                                            18.00 W.I.T – Selesai</li>
+                                        <li>Hotel Jasmine Jayapura, Lt. 8</li>
+                                        <li>Jl. Percetakan Negara No.8, Gurabesi, Kec. Jayapura  Utara, <br>Kota Jayapura</li>
+                                        <li> <a class="popup-gmaps"
+                                                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.897519371646!2d140.70201007377634!3d-2.540294338280056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686c58422324aa3d%3A0x264fddf9f68e3b33!2sHotel%20Jasmine%20Jayapura!5e0!3m2!1sen!2sid!4v1692331788393!5m2!1sen!2sid">Lihat
+                                                Lokasi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- end container -->
+        </section>
+        <!-- end wpo-event-section -->
+
+
+        <!-- start story-section -->
+        <section class="story-section section-padding" id="story">
+            <div class="container">
+                <div class="row">
+                    <div class="wpo-section-title">
+                        <div class="section-title-icon">
+                            <i class="fi flaticon-dove"></i>
+                        </div>
+                        <h2>Turut Mengundang</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="story-timeline">
+                            <div class="row">
+                                <div class="col offset-lg-6 col-lg-6 col-12 text-holder">
+                                    <span class="heart">
+                                        <i class="fi flaticon-balloon"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="story-timeline-item s1">
+                                <div class="row align-items-center">
+                                    <div class="col col-lg-6 col-12">
+                                        <div class="img-holder right-align-text wow fadeInLeftSlow" data-wow-duration="1500ms">
+                                            <img src="assets/images/story/grafis-1.png" alt class="img img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col col-lg-6 col-12">
+                                        <div class="story-text left-align-text wow fadeInRightSlow" data-wow-duration="2000ms">
+                                            <h3>Pihak Mempelai Pria</h3>
+                                            <div class="line-shape">
+                                                <div class="outer-ball">
+                                                    <div class="inner-ball"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="styled-list">
+                                                <li>1. Kel. Drs. I Made Budi, M.Si</li>
+                                                <li>2. Kel. Gustaf R. Kawer, S.H., M.Si</li>
+                                                <li>3. Kel. Hanok R. Mallo, S.E</li>
+                                                <li>4. Kel. Bodewyn Robert Deda</li>
+                                                <li>5. Kel. Markus Deda</li>
+                                                <li>6. Kel. Esau Tampoto</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="story-timeline-item">
+                                <div class="row align-items-center">
+                                    <div class="col col-lg-6 col-12 order-lg-1 order-2 text-holder left-text">
+                                        <div class="story-text left-align-text wow fadeInRightSlow" data-wow-duration="2000ms">
+                                            <h3>Pihak Mempelai Wanita</h3>
+                                            <div class="line-shape">
+                                                <div class="outer-ball">
+                                                    <div class="inner-ball"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="styled-list">
+                                                <li>1. Kel. Elyas Wenda,  SE., M.Si</li>
+                                                <li>2. Kel. Ir.  Stanley J.J.H Waita, MT</li>
+                                                <li>3. Kel. Iwan Y.  Ayomi,  ST., M.Eng</li>
+                                                <li>4. Kel. Ev. Dave Doyapo, SH., MA.Bs</li>
+                                                <li>5. Kel. Alm. Geradus Ferdinandus</li>
+                                                <li>6. Kel. Iptu A. Pieter N. Werbabkay</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col col-lg-6 col-12 order-lg-2 order-1">
+                                        <div class="img-holder left-align-text">
+                                            <img src="assets/images/story/grafis-2.png" alt class="img img-responsive wow fadeInRightSlow" data-wow-duration="1500ms">
+                                            <span class="heart">
+                                                <i class="fi flaticon-dance"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+            <div class="shape-1">
+                <div class="sticky-shape">
+                    <img src="assets/images/rsvp/shape1.png" alt="">
+                </div>  
+            </div>
+            <div class="shape-2">
+                <div class="sticky-shape">
+                    <img src="assets/images/rsvp/shape2.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- end story-section -->
+
+        <!-- start wpo-cta-section -->
+
+        <div class="wpo-cta-section">
+            <div class="conatiner-fluid">
+                <div class="wpo-cta-item">
+                    <h2>Matius 19:5-6</h2>
+                    <h3 class="text-light"> Sebab itu laki-laki akan meninggalkan ayah dan ibunya dan bersatu dengan isterinya, <br>sehingga keduanya itu menjadi satu daging. Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia.</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- end wpo-cta-section -->
+        
+
+
+        <!-- start of wpo-site-footer-section -->
+        <footer class="wpo-site-footer">
+         
+            <div class="wpo-lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <p class="copyright"> Powered by <a href="https://www.yaswarau.id/">NokenSoft <sup>PT. Noken Inovasi Teknologi Informasi</sup></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of wpo-site-footer-section -->
+        <!-- color-switcher -->
+
+    </div>
+    <!-- end of page-wrapper -->
+
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/jquery.dlmenu.js"></script>
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/date.js"></script>
+
+   <!-- <script src="assets/js/google.min.js"></script> -->
+
+
+
+    </script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+type="text/javascript"></script>
+      
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'id',includedLanguages :"id,en" }, 'google_translate_element');
+
+      var $googleDiv = $("#google_translate_element .skiptranslate");
+      var $googleDivChild = $("#google_translate_element .skiptranslate div");
+      $googleDivChild.next().remove();
+
+      $googleDiv.contents().filter(function(){
+        return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
+      }).remove();
+    }
+    </script>
+ <script>
+       
+
+    var music = document.getElementById("myAudio");
+
+playButton()
+ function playButton() {
+     let btn_pause = document.getElementById("pause-btn");
+     let btn_play = document.getElementById("play-btn");
+     btn_pause.classList.remove("d-none");
+     btn_play.classList.add("d-none");
+     music.play();
+ }
+ 
+ function pauseButton() {
+     let btn_pause = document.getElementById("pause-btn");
+     let btn_play = document.getElementById("play-btn");
+     btn_pause.classList.add("d-none");
+     btn_play.classList.remove("d-none");
+     music.pause();
+ }
+</script>
+</body>
+
+
+</html>

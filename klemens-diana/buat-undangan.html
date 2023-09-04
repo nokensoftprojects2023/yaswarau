@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta property="og:type" content="Yaswarau" />
+    <title>Klemens & Diana</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="Yaswarau" />
+    <meta property="og:title" content="Klemens & Diana " />
+    <meta property="og:description" content="Wedding Invitation" />
+    <meta property="og:url" content="https://yaswarau.id/klemens-diana" />
+    <meta property="og:site_name" content="Yaswarau" />
+    <meta property="og:image" content="https://yaswarau.id/klemens-diana/assets/images/meta.png />
+
+
+    <link href="../images/favicon-yaswarau.png" rel="shortcut icon" type="image/png">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ 
+
+
+     <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  
+
+</head>
+
+<body class="bg-secondary text-white"  style="padding-bottom: 0px; margin-bottom: 0px;">
+
+    <div id="intro" class="container-fluid" style="padding-top: 100px;">
+        <div class="row">
+            <div class="col-12 mx-auto text-center ">
+               
+                <!-- divider end -->
+                <div class="mb-4">
+                    <h4 class="mb-3 font-style fw-bold fs-5 mb-0 pb-0">Kirim Undangan Pernikahan</h4>
+                    <h4 class=" mb-5 fw-bold  ">Klemens & Diana </h4>
+                </div>
+            </div>
+            <div class="col-12 mx-auto">
+                <p class="fw-bold fs-4 mb-3">Nama Tamu Undangan</p>
+                <!-- Nama tamu undangan -->
+                <div class="tamu-udangan">
+                    <div class="text-white fw-bold mb-4 ">
+                        <input type="text" class="form-control form-control-lg p-5 shadow mb-4 " name="tamu" id="tamu"  placeholder="Ketik nama lengkap di sini...">
+                        <div class="text-center">
+                            <a href="#tamu"  id="btn-undangan" class="btn   btn-success text-start fs-1 fw-bold">
+                                <i class="fa-solid fa-clipboard"></i> Salin Link Undangan
+                            </a>
+                        </div>
+    <script>
+        const copyBtn = document.getElementById('btn-undangan')
+        const copyText = document.getElementById('tamu')
+
+        copyBtn.onclick = () => {
+            copyText.select();
+            let teks = copyText.value;
+            if(teks === '')
+            {
+                Swal.fire({         //displays a pop up with sweetalert
+                icon: 'error',
+                text: 'Masukan nama tamu dengan benar',
+                showConfirmButton: true,
+                timer: 3000
+            });
+            }else{
+                let nama = teks.replace(/ /g,"-");
+                let base_url = window.location.href;
+                let url = `Kepada Yth:
+Bapak/Ibu/Saudara/i
+
+*${teks}*
+
+Kami dengan suka cita mengundang Bapak/Ibu/Saudara/i untuk memberikan doa dan restu pada resepsi & pernikahan kami.
+
+https://yaswarau.id/klemens-diana/index.html?nama=${nama}
+
+*Klemens & Diana*
+
+Terimakasih 
+😇🙏🏼😇`;
+                navigator.clipboard.writeText(url);
+                // let url =
+                document.execCommand('copy');    // Simply copies the selected text to clipboard 
+                Swal.fire({         //displays a pop up with sweetalert
+                    icon: 'success',
+                    text: 'Link sudah tersalin !!',
+                    showConfirmButton: true,
+                    timer: 3000
+                });
+            }
+        
+        }
+    </script>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+        </div>
+        <!-- .row end -->
+    </div>
+
+    
+    <!-- #intro end -->
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
+</body>
+
+</html>

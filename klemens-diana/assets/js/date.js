@@ -8,7 +8,6 @@ const hitungMundur = setInterval(function () {
   const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
   const detik = Math.floor((selisih % (1000 * 60)) / 1000);
-  console.log(detik);
   const teks = document.getElementById('date');
   
   document.getElementById('days').innerHTML = hari + ' Days';
